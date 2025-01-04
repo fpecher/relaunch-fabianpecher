@@ -6,7 +6,8 @@
     "projectColor": "#d4a965",
     "year": "2018",
     "linkToWebsite": "https://www.9zehn03.de/",
-    "mainImage": "./images/neunzehn03/imac-9zehn03.jpg",
-    "otherImages": ["./images/neunzehn03/imac-9zehn03.jpg", "./images/neunzehn03/imac-9zehn03.jpg"],
-    "tasks": ["Design des Themes", "Entwicklung WordPress-Theme", "Entwicklung CPT für Speisekarte", "Design des Inhalts", "Einpflege der Inhalte"]
+    "mainImage": "./images/neunzehn03/hero-image.png",
+    "otherImages": ["./images/neunzehn03/hero-image.png", "./images/neunzehn03/hero-image.png"],
+    "tasks": ["Design des Themes", "Entwicklung WordPress-Theme", "Entwicklung CPT für Speisekarte", "Design des Inhalts", "Einpflege der Inhalte"],
+    "order": 6
   }

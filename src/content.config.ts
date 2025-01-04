@@ -15,6 +15,7 @@ const projectCollection = defineCollection({
       mainImage: image(),
       otherImages: z.array(image()),
       tasks: z.array(z.string()),
+      order: z.number(),
     });
   },
 });

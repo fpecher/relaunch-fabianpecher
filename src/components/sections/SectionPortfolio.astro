@@ -5,6 +5,8 @@ import TeaserProject from "../TeaserProject.astro";
 const sectionTitle = "Referenzen";
 const sectionIntroParagraph = "Entdecken Sie einige meiner Projekte. Die meisten Projekte sind enstanden, als ich mich im Angestelltenverhältnis bei der JoussenKarliczek GmbH befand.";
 const projects = await getCollection("projects");
+
+const sortedProjects = projects.sort((a, b) => a.data.order - b.data.order);
 ---
 <section class="section-portfolio -spacing-outer-50" id="section-portfolio">
     <div class="row">
@@ -19,6 +21,6 @@ const projects = await getCollection("projects");
     </div>
 
     <div class="row">
-        {projects.map((project) => <div class="column column--xs-12 column--l-12 -spacing-outer-50"  data-aos="fade-up" data-aos-duration="1000"><TeaserProject project={project}/></div> )}
+        {sortedProjects.map((project) => <div class="column column--xs-12 column--l-12 -spacing-outer-50"  data-aos="fade-up" data-aos-duration="1000"><TeaserProject project={project}/></div> )}
     </div>
 </section>

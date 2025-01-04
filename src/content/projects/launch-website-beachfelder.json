@@ -6,7 +6,8 @@
     "projectColor": "#08b8b8",
     "year": "2019",
     "linkToWebsite": "https://www.beachfelder.de",
-    "mainImage": "./images/project-3/imac-beachfelder.jpg",
+    "mainImage": "./images/beachfelder/hero-image.png",
     "otherImages": ["https://dummyimage.com/600x400/000/fff", "https://dummyimage.com/600x400/333/fff", "https://dummyimage.com/600x400/222/fff"],
-    "tasks": ["Design Frontend & Backend", "Entwicklung Frontend", "Verwaltung Datenbestand", "Stetige Verbesserung & Erweiterung"]
+    "tasks": ["Design Frontend & Backend", "Entwicklung Frontend", "Verwaltung Datenbestand", "Stetige Verbesserung & Erweiterung"],
+    "order": 5
   }

@@ -8,5 +8,6 @@
     "linkToWebsite": "https://hartmann-shf.de",
     "mainImage": "./images/hartmann-shf/hero-image.png",
     "otherImages": ["./images/hartmann-shf/screen-mobile.png"],
-    "tasks": ["Entwicklung WordPress-Theme", "Entwicklung Gutenberg-Blöcke", "Animationen mit GSAP", "Einpflege der Inhalte", "Schulung des Kunden"]
+    "tasks": ["Entwicklung WordPress-Theme", "Entwicklung Gutenberg-Blöcke", "Animationen mit GSAP", "Einpflege der Inhalte", "Schulung des Kunden"],
+    "order": 4
   }

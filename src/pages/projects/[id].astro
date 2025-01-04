@@ -77,9 +77,27 @@ const pageTitle = "Projekt | " + title + ' ' + client;
         </div>
         
         <div class="row">
-            {otherImages.map((image) => (
-                <div class="column column--xs-12 column--s-12 column--m-12 -spacing-outer-40" data-aos="fade-up" data-aos-duration="850" data-aos-delay="500"><Image src={image} width={1200} height={800} alt={title} class="image image--rounded-corners"/></div>
-            ))}
+            <div class="column column--xs-12 column--s-12 column--m-12 -spacing-outer-40" data-aos="fade-up" data-aos-duration="850" data-aos-delay="500">
+                <div class="glide glide--project-detail-image-slider">
+                    <div class="glide__track" data-glide-el="track">
+                        <div class="glide__slides">
+                            {otherImages.map((image) => (
+                                <div class="glide__slide">
+                                    <Image src={image} width={1200} height={800} alt={title} class="image image--rounded-corners"/>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div class="glide__arrows" data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                            <span class="icon" data-feather="arrow-left"></span>
+                        </button>
+                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                            <span class="icon" data-feather="arrow-right"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row">
@@ -91,7 +109,6 @@ const pageTitle = "Projekt | " + title + ' ' + client;
         </div>
     </div>
 </BaseLayout>
-
 <style lang="scss" define:vars={{projectColor}}>
     @use '../../styles/mixins/spacing.mixin' as spacings;
     @use '../../styles/mixins/breakpoint.mixin' as breakpoints;
