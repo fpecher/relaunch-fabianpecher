@@ -5,7 +5,7 @@
 
 h1 {
   @include fontsizes.font-size(40);
-  font-family: 'Ubuntu';
+  font-family: fonts.$font-family-headlines;
   font-weight: 700;
   color: colors.$primary-gray;
   
@@ -16,7 +16,7 @@ h1 {
 
 h2 {
   @include fontsizes.font-size(25);
-  font-family: 'Ubuntu';
+  font-family: fonts.$font-family-headlines;
   font-weight: 700;
   color: colors.$primary-gray;
 
@@ -27,7 +27,7 @@ h2 {
 
 h3 {
   @include fontsizes.font-size(20);
-  font-family: 'Ubuntu';
+  font-family: fonts.$font-family-headlines;
   font-weight: 300;
   color: colors.$secondary-gray;
   text-transform: uppercase;
@@ -39,7 +39,7 @@ h3 {
 
 h4 {
   @include fontsizes.font-size(25);
-  font-family: 'Lora';
+  font-family: fonts.$font-family-main;
   font-weight: 400;
   color: colors.$secondary-gray;
 
@@ -50,21 +50,21 @@ h4 {
 
 h5 {
   @include fontsizes.font-size(18);
-  font-family: 'Lora';
+  font-family: fonts.$font-family-main;
   font-weight: 400;
   color: colors.$primary-gray;
 }
 
 h6 {
   @include fontsizes.font-size(16);
-  font-family: 'Ubuntu';
+  font-family: fonts.$font-family-headlines;
   font-weight: 400;
   color: colors.$secondary-gray;
 }
 
 p {
   @include fontsizes.font-size(16);
-  font-family: 'Lora';
+  font-family: fonts.$font-family-main;
   font-weight: 400;
   color: colors.$secondary-gray;
   line-height: 1.5;
@@ -78,4 +78,42 @@ p {
 
 strong {
   font-weight: 700;
+}
+
+.headline {
+  &--h1 {
+    @include fontsizes.font-size(40);
+    font-family: fonts.$font-family-headlines;
+    font-weight: 700;
+    color: colors.$primary-gray;
+    text-transform: none;
+    
+    @include breakpoints.breakpoint('s') {
+      @include fontsizes.font-size(70);
+    }
+  }
+
+  &--h2 {
+    @include fontsizes.font-size(25);
+    font-family: fonts.$font-family-headlines;
+    font-weight: 700;
+    color: colors.$primary-gray;
+    text-transform: none;
+  
+    @include breakpoints.breakpoint('s') {
+      @include fontsizes.font-size(35);
+    }
+  }
+  
+  &--h3 {
+    @include fontsizes.font-size(20);
+    font-family: fonts.$font-family-headlines;
+    font-weight: 300;
+    color: colors.$secondary-gray;
+    text-transform: uppercase;
+
+    @include breakpoints.breakpoint('s') {
+      @include fontsizes.font-size(24);
+    }
+  }
 }

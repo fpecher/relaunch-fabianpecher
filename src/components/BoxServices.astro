@@ -20,9 +20,11 @@ const { title, items, aosEffect = "fade-up", aosDuration = 1000, aosDelay = 0 } 
 </div>
 <style lang="scss">
     @use '../styles/setup/colors.setup' as colors;
+    @use '../styles/setup/fonts.setup' as fonts;
     @use '../styles/mixins/breakpoint.mixin' as breakpoints; 
     @use '../styles/mixins/font-size.mixin' as fontsizes;
     @use '../styles/mixins/spacing.mixin' as spacings;
+    @use '../styles/mixins/font-family.mixin' as fontfamily;
     @use "../styles/setup/variables.setup" as variables;
 
     .box-services {
@@ -52,9 +54,8 @@ const { title, items, aosEffect = "fade-up", aosDuration = 1000, aosDelay = 0 } 
 
         &__title {
             @include fontsizes.font-size(24);
+            @include fontfamily.font-family('headlines', 700);
             
-            font-family: 'Ubuntu';
-            font-weight: 700;
             color: colors.$primary-gray;
             text-transform: uppercase;
         }
