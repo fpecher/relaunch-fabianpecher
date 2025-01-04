@@ -1,0 +1,12 @@
+{
+    "title": "Launch Website",
+    "client": "NEUNZEHN03",
+    "typeOfProject": "WordPress",
+    "introText": "Beim Launch der Website 9zehn03.de war ich für das gesamte Design der Website verantwortlich und entwickelte ein maßgeschneidertes WordPress-Theme, das das visuelle Konzept optimal umsetzt. Zusätzlich habe ich spezifische Gutenberg-Blöcke erstellt, um die Inhaltsverwaltung zu erleichtern, sowie ein Custom Post Type (CPT) für die Speisekarten entwickelt. Die Einpflege der Inhalte rundete meine Arbeit ab und trug zu einem erfolgreichen Launch der Website bei.",
+    "projectColor": "#d4a965",
+    "year": "2018",
+    "linkToWebsite": "https://www.9zehn03.de/",
+    "mainImage": "./images/neunzehn03/imac-9zehn03.jpg",
+    "otherImages": ["./images/neunzehn03/imac-9zehn03.jpg", "./images/neunzehn03/imac-9zehn03.jpg"],
+    "tasks": ["Design des Themes", "Entwicklung WordPress-Theme", "Entwicklung CPT für Speisekarte", "Design des Inhalts", "Einpflege der Inhalte"]
+  }

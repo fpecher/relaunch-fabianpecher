@@ -1,0 +1,277 @@
+@use '../../mixins/breakpoint.mixin' as breakpoints;
+
+.column {
+	min-height: 1px; // prevents layout even when column is empty
+	padding-left: 10px;
+	padding-right: 10px;
+	float: left;
+	box-sizing: border-box;
+
+	&--1 { width: 8.333333%; }
+	&--2 { width: 16.666667%; }
+	&--3 { width: 25%; }
+	&--4 { width: 33.333333%; }
+	&--5 { width: 41.666667%; }
+	&--6 { width: 50%; }
+	&--7 { width: 58.333333%; }
+	&--8 { width: 66.666667%; }
+	&--9 { width: 75%; }
+	&--10 { width: 83.333333%; }
+	&--11 { width: 91.666667%; }
+	&--12 { width: 100%; }
+
+	@include breakpoints.breakpoint('xs') {
+		&--xs-auto  { width: auto; }
+		&--xs-1     { width: 8.333333%; }
+		&--xs-2     { width: 16.666667%; }
+		&--xs-3     { width: 25%; }
+		&--xs-4     { width: 33.333333%; }
+		&--xs-5     { width: 41.666667%; }
+		&--xs-6     { width: 50%; }
+		&--xs-7     { width: 58.333333%; }
+		&--xs-8     { width: 66.666667%; }
+		&--xs-9     { width: 75%; }
+		&--xs-10    { width: 83.333333%; }
+		&--xs-11    { width: 91.666667%; }
+		&--xs-12    { width: 100%; }
+	}
+
+	@include breakpoints.breakpoint('s') {
+		padding-left: 20px;
+		padding-right: 20px;
+
+		&--s-1     { width: 8.333333%; }
+		&--s-2     { width: 16.666667%; }
+		&--s-3     { width: 25%; }
+		&--s-4     { width: 33.333333%; }
+		&--s-5     { width: 41.666667%; }
+		&--s-6     { width: 50%; }
+		&--s-7     { width: 58.333333%; }
+		&--s-8     { width: 66.666667%; }
+		&--s-9     { width: 75%; }
+		&--s-10    { width: 83.333333%; }
+		&--s-11    { width: 91.666667%; }
+		&--s-12    { width: 100%; }
+	}
+
+	@include breakpoints.breakpoint('m') {
+		
+		&--m-1    { width: 8.333333%; }
+		&--m-2    { width: 16.666667%; }
+		&--m-3    { width: 25%; }
+		&--m-4    { width: 33.333333%; }
+		&--m-5    { width: 41.666667%; }
+		&--m-6    { width: 50%; }
+		&--m-7    { width: 58.333333%; }
+		&--m-8    { width: 66.666667%; }
+		&--m-9    { width: 75%; }
+		&--m-10   { width: 83.333333%; }
+		&--m-11   { width: 91.666667%; }
+		&--m-12   { width: 100%; }
+	}
+
+	@include breakpoints.breakpoint('l') {
+		padding-left: 20px;
+		padding-right: 20px;
+
+		&--l-1    { width: 8.333333%; }
+		&--l-2    { width: 16.666667%; }
+		&--l-3    { width: 25%; }
+		&--l-4    { width: 33.333333%; }
+		&--l-5    { width: 41.666667%; }
+		&--l-6    { width: 50%; }
+		&--l-7    { width: 58.333333%; }
+		&--l-8    { width: 66.666667%; }
+		&--l-9    { width: 75%; }
+		&--l-10   { width: 83.333333%; }
+		&--l-11   { width: 91.666667%; }
+		&--l-12   { width: 100%; }
+	}
+
+	&--zero {
+		padding-left: 0;
+		padding-right: 0;
+
+		&-xxs-only {
+			@include breakpoints.breakpoint('xxs', 'xs') {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+
+		&-xs-only {
+			@include breakpoints.breakpoint('xs', 's') {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+
+		&-s-only {
+			@include breakpoints.breakpoint('s', 'm') {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+
+		&-m-only {
+			@include breakpoints.breakpoint('m', 'l') {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+
+		&-l-only {
+			@include breakpoints.breakpoint('l') {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+
+	//pushing columns
+	&--push {
+		@include breakpoints.breakpoint('xs') {
+			&-xs-1 {margin-left: 8.333333%;}
+			&-xs-2 {margin-left: 16.666667%;}
+			&-xs-3 {margin-left: 25%;}
+			&-xs-4 {margin-left: 33.333333%;}
+			&-xs-5 {margin-left: 41.666667%;}
+			&-xs-6 {margin-left: 50%;}
+			&-xs-7 {margin-left: 58.333333%;}
+			&-xs-8 {margin-left: 66.666667%;}
+			&-xs-9 {margin-left: 75%;}
+			&-xs-10 {margin-left: 83.333333%;}
+			&-xs-11 {margin-left: 91.666667%;}
+		}
+		
+		@include breakpoints.breakpoint('s') {
+			&-s-1 {margin-left: 8.333333%;}
+			&-s-2 {margin-left: 16.666667%;}
+			&-s-3 {margin-left: 25%;}
+			&-s-4 {margin-left: 33.333333%;}
+			&-s-5 {margin-left: 41.666667%;}
+			&-s-6 {margin-left: 50%;}
+			&-s-7 {margin-left: 58.333333%;}
+			&-s-8 {margin-left: 66.666667%;}
+			&-s-9 {margin-left: 75%;}
+			&-s-10 {margin-left: 83.333333%;}
+			&-s-11 {margin-left: 91.666667%;}
+		}
+		
+		@include breakpoints.breakpoint('m') {
+			&-m-1 {margin-left: 8.333333%;}
+			&-m-2 {margin-left: 16.666667%;}
+			&-m-3 {margin-left: 25%;}
+			&-m-4 {margin-left: 33.333333%;}
+			&-m-5 {margin-left: 41.666667%;}
+			&-m-6 {margin-left: 50%;}
+			&-m-7 {margin-left: 58.333333%;}
+			&-m-8 {margin-left: 66.666667%;}
+			&-m-9 {margin-left: 75%;}
+			&-m-10 {margin-left: 83.333333%;}
+			&-m-11 {margin-left: 91.666667%;}
+		}
+		
+		@include breakpoints.breakpoint('l') {
+			&-l-1 {margin-left: 8.333333%;}
+			&-l-2 {margin-left: 16.666667%;}
+			&-l-3 {margin-left: 25%;}
+			&-l-4 {margin-left: 33.333333%;}
+			&-l-5 {margin-left: 41.666667%;}
+			&-l-6 {margin-left: 50%;}
+			&-l-7 {margin-left: 58.333333%;}
+			&-l-8 {margin-left: 66.666667%;}
+			&-l-9 {margin-left: 75%;}
+			&-l-10 {margin-left: 83.333333%;}
+			&-l-11 {margin-left: 91.666667%;}
+		}
+
+		@include breakpoints.breakpoint('xl') {
+			&-xl-1 {margin-left: 8.333333%;}
+			&-xl-2 {margin-left: 16.666667%;}
+			&-xl-3 {margin-left: 25%;}
+			&-xl-4 {margin-left: 33.333333%;}
+			&-xl-5 {margin-left: 41.666667%;}
+			&-xl-6 {margin-left: 50%;}
+			&-xl-7 {margin-left: 58.333333%;}
+			&-xl-8 {margin-left: 66.666667%;}
+			&-xl-9 {margin-left: 75%;}
+			&-xl-10 {margin-left: 83.333333%;}
+			&-xl-11 {margin-left: 91.666667%;}
+		}
+	}
+	
+	
+	//pulling columns
+	&--pull {
+		@include breakpoints.breakpoint('xs') {
+			&-xs-1 {margin-left: -8.333333%;}
+			&-xs-2 {margin-left: -16.666667%;}
+			&-xs-3 {margin-left: -25%;}
+			&-xs-4 {margin-left: -33.333333%;}
+			&-xs-5 {margin-left: -41.666667%;}
+			&-xs-6 {margin-left: -50%;}
+			&-xs-7 {margin-left: -58.333333%;}
+			&-xs-8 {margin-left: -66.666667%;}
+			&-xs-9 {margin-left: -75%;}
+			&-xs-10 {margin-left: -83.333333%;}
+			&-xs-11 {margin-left: -91.666667%;}
+		}
+		
+		@include breakpoints.breakpoint('s') {
+			&-s-1 {margin-left: -8.333333%;}
+			&-s-2 {margin-left: -16.666667%;}
+			&-s-3 {margin-left: -25%;}
+			&-s-4 {margin-left: -33.333333%;}
+			&-s-5 {margin-left: -41.666667%;}
+			&-s-6 {margin-left: -50%;}
+			&-s-7 {margin-left: -58.333333%;}
+			&-s-8 {margin-left: -66.666667%;}
+			&-s-9 {margin-left: -75%;}
+			&-s-10 {margin-left: -83.333333%;}
+			&-s-11 {margin-left: -91.666667%;}
+		}
+		
+		@include breakpoints.breakpoint('m') {
+			&-m-1 {margin-left: -8.333333%;}
+			&-m-2 {margin-left: -16.666667%;}
+			&-m-3 {margin-left: -25%;}
+			&-m-4 {margin-left: -33.333333%;}
+			&-m-5 {margin-left: -41.666667%;}
+			&-m-6 {margin-left: -50%;}
+			&-m-7 {margin-left: -58.333333%;}
+			&-m-8 {margin-left: -66.666667%;}
+			&-m-9 {margin-left: -75%;}
+			&-m-10 {margin-left: -83.333333%;}
+			&-m-11 {margin-left: -91.666667%;}
+		}
+		
+		@include breakpoints.breakpoint('l') {
+			&-l-1 {margin-left: -8.333333%;}
+			&-l-2 {margin-left: -16.666667%;}
+			&-l-3 {margin-left: -25%;}
+			&-l-4 {margin-left: -33.333333%;}
+			&-l-5 {margin-left: -41.666667%;}
+			&-l-6 {margin-left: -50%;}
+			&-l-7 {margin-left: -58.333333%;}
+			&-l-8 {margin-left: -66.666667%;}
+			&-l-9 {margin-left: -75%;}
+			&-l-10 {margin-left: -83.333333%;}
+			&-l-11 {margin-left: -91.666667%;}
+		}
+
+		@include breakpoints.breakpoint('xl') {
+			&-xl-1 {margin-left: -8.333333%;}
+			&-xl-2 {margin-left: -16.666667%;}
+			&-xl-3 {margin-left: -25%;}
+			&-xl-4 {margin-left: -33.333333%;}
+			&-xl-5 {margin-left: -41.666667%;}
+			&-xl-6 {margin-left: -50%;}
+			&-xl-7 {margin-left: -58.333333%;}
+			&-xl-8 {margin-left: -66.666667%;}
+			&-xl-9 {margin-left: -75%;}
+			&-xl-10 {margin-left: -83.333333%;}
+			&-xl-11 {margin-left: -91.666667%;}
+		}
+	}
+}

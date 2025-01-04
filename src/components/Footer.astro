@@ -1,0 +1,57 @@
+---
+import NavigationMeta from "./NavigationMeta.astro"
+import CustomCursor from "./CustomCursor.astro";
+
+import 'aos/dist/aos.css';
+---
+<CustomCursor />
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="column column--12 -text-align--center">
+                <p>made with</p>
+                <p>
+                    <span class="icon icon--red" data-feather="heart"></span> &amp;
+                    <span class="icon" data-feather="coffee"></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="row -mobile-only">
+            <div class="column column--12 -spacing-outer-30 -text-align--center">
+                <NavigationMeta class="navigation-meta footer__navigation-meta"/>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style lang="scss" is:global>
+    @use '../styles/mixins/spacing.mixin' as spacings;
+    @use '../styles/setup/colors.setup' as colors;
+    
+    .footer {
+        @include spacings.spacing-inner('top', 20px);
+        @include spacings.spacing-inner('bottom', 20px);
+
+        border-top: 1px colors.$tertiary-gray solid;
+
+        &__navigation-meta {
+            display: block;
+        }
+    }
+
+    .page--project-detail .footer {
+        @include spacings.spacing-outer(40px);
+    }
+</style>
+
+<script>
+    import { aosInit } from "../scripts/aos";
+    import { featherInit } from "../scripts/feathericons";
+    import { commonJS } from "../scripts/common";
+
+    commonJS();
+    aosInit();
+    featherInit();
+</script>

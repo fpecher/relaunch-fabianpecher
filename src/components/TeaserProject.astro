@@ -1,0 +1,159 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+    project: CollectionEntry<"projects">,
+}
+const { project } = Astro.props;
+const {title, mainImage, client, typeOfProject, projectColor} = project.data;
+---
+<div class="teaser-project">
+    <div class="teaser-project__image-hold">
+        <a href={`/projects/${project.id}`} aria-label={title}>
+            <Image src={mainImage} class="teaser-project__image" width="250" height="250" alt={title} />
+        </a>
+    </div>
+    <div class="teaser-project__hover">
+        <h5 class="teaser-project__title">{title}</h5>
+        <h6 class="teaser-project__subtitle">{client}</h6>
+        <h6 class="teaser-project__subtitle teaser-project__subtitle--italic">{typeOfProject}</h6>
+
+        <span class="teaser-project__link-icon" data-feather="arrow-right"></span>
+    </div>
+</div>
+
+<style lang="scss" define:vars={{projectColor}}>
+    @use "../styles/mixins/breakpoint.mixin" as breakpoints;
+    @use "../styles/setup/colors.setup" as colors;
+    @use "../styles/mixins/spacing.mixin" as spacings;
+    @use "../styles/mixins/font-size.mixin" as fontsizes;
+    @use "../styles/setup/variables.setup" as variables;
+    @use "sass:color";
+    
+    .teaser-project {
+        $bem-block: &;
+
+        width: 100%;
+        position: relative;
+        display: inline-block;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: calc(100% - 15px);
+            position: absolute;
+            left: 15px;
+            top: 20px;
+            background-color: var(--projectColor);
+            z-index: -1;
+            transition: .3s ease-in-out;
+            border-radius: variables.$global-border-radius;
+
+            @include breakpoints.breakpoint("s") {
+                height: 100%;
+                top: 15px;
+            }
+        }
+
+        &:hover #{$bem-block}__image {
+            transform: scale(1.05);
+        }
+
+        &__image-hold {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: variables.$global-border-radius;
+            
+            a {
+                display: block;
+                aspect-ratio: 5/3;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__image {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            z-index: 1;
+            transition: 0.3s;
+        }
+
+        &__hover {
+            @include spacings.spacing-inner("top", 20px);
+            @include spacings.spacing-inner("bottom", 20px);
+            @include spacings.spacing-inner("left", 25px);
+            @include spacings.spacing-inner("right", 45px);
+
+            position: relative;
+            left: 0;
+            bottom: 10px;
+            z-index: 3;
+            background: colors.$tertiary-gray;
+            transition: .5s;
+            width: 100%;
+            border-bottom-right-radius: variables.$global-border-radius;
+            border-bottom-left-radius: variables.$global-border-radius;
+
+            @include breakpoints.breakpoint("s") {
+                position: absolute;
+                left: 15px;
+                bottom: 17px;
+                width: auto;
+                opacity: 1;
+                text-align: left;
+                border-radius: variables.$global-border-radius;
+            }
+        }
+
+        &__title {
+            @include fontsizes.font-size(18);
+            font-family: "Ubuntu";
+            font-weight: 700;
+            color: colors.$primary-gray;
+
+            @include breakpoints.breakpoint("s") {
+                @include fontsizes.font-size(20);
+            }
+        }
+
+        &__subtitle {
+            @include fontsizes.font-size(15);
+            @include spacings.spacing-outer(5);
+            @include spacings.spacing-inner("bottom", 15);
+
+            font-family: "Lora";
+            font-weight: 400;
+            color: colors.$secondary-gray;
+            border-bottom: 1px color.adjust(colors.$tertiary-gray, $lightness: -5%) solid;
+
+            @include breakpoints.breakpoint("s") {
+                @include fontsizes.font-size(15);
+                @include spacings.spacing-outer(10);
+            }
+
+            &--italic {
+                @include spacings.spacing-outer(14);
+                @include spacings.spacing-inner("bottom", 0);
+                font-style: italic;
+                border-bottom: none;
+            }
+        }
+
+        &__link-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            color: colors.$secondary-gray;
+
+            @include breakpoints.breakpoint("s") {
+                display: none;
+            }
+        }
+    }
+</style>

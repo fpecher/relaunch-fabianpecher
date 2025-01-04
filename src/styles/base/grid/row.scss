@@ -1,0 +1,67 @@
+@use '../../mixins/breakpoint.mixin' as breakpoints;
+
+.row {
+	margin-left: -.25rem;
+	margin-right: -.25rem;
+
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+	@include breakpoints.breakpoint('s') {
+		margin-left: -.5rem;
+		margin-right: -.5rem;
+	}
+
+	@include breakpoints.breakpoint('l') {
+		margin-left: -.75rem;
+		margin-right: -.75rem;
+	}
+
+	&--small {
+		margin-left: -.1875rem;
+		margin-right: -.1875rem;
+	}
+
+	&--zero {
+		margin-left: 0;
+		margin-right: 0;
+
+		&-xxs-only {
+			@include breakpoints.breakpoint('xxs', 'xs') {
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+
+		&-xs-only {
+			@include breakpoints.breakpoint('xs', 's') {
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+
+		&-s-only {
+			@include breakpoints.breakpoint('s', 'm') {
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+
+		&-m-only {
+			@include breakpoints.breakpoint('m', 'l') {
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+
+		&-l-only {
+			@include breakpoints.breakpoint('l') {
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,33 @@
+@use '../mixins/breakpoint.mixin' as breakpoints;
+@use '../setup/colors.setup' as colors;
+
+.-link {
+  color: colors.$primary-gray;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  
+  @include breakpoints.breakpoint('s') {
+    border-bottom: 1px solid colors.$secondary-gray;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+      width: 100%;
+      height: 0;
+      background: rgba(colors.$secondary-gray, .4);
+      transition: .15s;
+    }
+
+    &:hover {
+
+      &::before {
+        height: 50%;
+      }
+    }
+  }
+}

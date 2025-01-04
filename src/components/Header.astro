@@ -1,0 +1,32 @@
+---
+import SocialIcon from "./SocialIcon.astro";
+import Logo from "./Logo.astro";
+import ThemeIcon from "./ThemeIcon.astro";
+---
+
+<header>
+    <div class="header__social-icons">
+        <SocialIcon platform="codepen" username="fpecher" />
+        <SocialIcon platform="instagram" username="f4bt0gr4phy" />
+    </div>
+
+    <Logo />
+    <!-- <ThemeIcon /> -->
+</header>
+<style lang="scss">
+    @use "../styles/mixins/breakpoint.mixin" as breakpoints;
+
+    .header {
+        &__social-icons {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            z-index: 1;
+        
+            @include breakpoints.breakpoint('s') {
+                left: 40px;
+                top: 30px;
+            }
+        }
+    }
+</style>

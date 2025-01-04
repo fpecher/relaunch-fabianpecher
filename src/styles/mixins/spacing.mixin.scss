@@ -1,0 +1,29 @@
+@use 'sass:math';
+
+@mixin spacing-outer($outerValue: null) {
+	@if math.is-unitless($outerValue) {
+		$outerValue: $outerValue * 1px;
+	}
+	
+	margin-top: $outerValue;
+}
+
+@mixin spacing-inner($innerType: null, $innerValue: null) {
+	// Einheit hinzufügen, falls nötig
+	@if math.is-unitless($innerValue) {
+	  $innerValue: $innerValue * 1px;
+	}
+  
+	// Padding basierend auf dem Typ setzen
+	@if $innerType == all {
+	  padding: $innerValue;
+	} @else if $innerType == top {
+	  padding-top: $innerValue;
+	} @else if $innerType == bottom {
+	  padding-bottom: $innerValue;
+	} @else if $innerType == left {
+	  padding-left: $innerValue;
+	} @else if $innerType == right {
+	  padding-right: $innerValue;
+	}
+  }

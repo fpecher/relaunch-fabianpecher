@@ -1,0 +1,70 @@
+---
+import BoxServices from "../../components/BoxServices.astro";
+
+const frontendItems = [
+    "HTML 5 / CSS 3",
+    "jQuery & JavaScript",
+    "BEM",
+    "Sass",
+    "Github",
+    "WordPress",
+    "Contao",
+    "Typo3",
+    "Shopware",
+];
+
+const uiDesign = [
+    "User Interface Design",
+    "Responsive Design",
+    "Interaction Design",
+    "User Experience Thinking",
+    "Wireframing",
+];
+
+const teamBuilding = [
+    "Kommunikation",
+    "Offenheit",
+    "Teamarbeit",
+    "Lächeln",
+    "",
+    "… und vieles mehr",
+];
+
+const { sectionTitle } = Astro.props;
+---
+<section class="section-services">
+    <div class="row">
+        <div class="column column--12 -spacing-outer-xxs-40 -spacing-outer-s-40 -spacing-outer-100" data-aos="fade-up" data-aos-duration="1000" >
+            <h1>{sectionTitle}</h1>
+        </div>
+    </div>
+    <div class="row -spacing-outer-50 -flex -flex--wrap">
+        <div class="column column--12 column--s-4 -spacing-outer-45">
+            <BoxServices
+                title="Frontend Development"
+                items={frontendItems}
+                aosEffect="fade-up"
+                aosDuration={1000}
+                aosDelay={0}
+            />
+        </div>
+        <div class="column column--12 column--s-4 -spacing-outer-45">
+            <BoxServices
+                title="UI / UX Design"
+                items={uiDesign}
+                aosEffect="fade-up"
+                aosDuration={1000}
+                aosDelay={250}
+            />
+        </div>
+        <div class="column column--12 column--s-4 -spacing-outer-45">
+            <BoxServices
+                title="Teambuilding"
+                items={teamBuilding}
+                aosEffect="fade-up"
+                aosDuration={1000}
+                aosDelay={350}
+            />
+        </div>
+    </div>
+</section>

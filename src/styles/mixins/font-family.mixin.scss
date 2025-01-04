@@ -1,0 +1,16 @@
+@use "../setup/fonts.setup" as fonts;
+
+@mixin font-family($font-family, $font-weight: null) {
+    @if $font-family == 'headlines' {
+
+        $font-family: fonts.$font-family-headlines;
+        $font-weight: $font-weight or 400;
+
+    } @else if $font-family == 'main' {
+        $font-family: fonts.$font-family-main;
+        $font-weight: $font-weight or 700;
+    }
+
+    font-family: $font-family;
+    font-weight: $font-weight;
+}

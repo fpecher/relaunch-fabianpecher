@@ -1,0 +1,49 @@
+---
+---
+<div class="scroll-down">
+    <span class="scroll-down__icon" data-feather="arrow-left"></span>
+    <span>Scroll down</span>
+</div>
+
+<style lang="scss">
+    @use "../styles/setup/colors.setup" as colors;
+    @use "../styles/mixins/font-family.mixin" as fontfamily;
+    @use "../styles/setup/pxtorem.func" as pxtorem;
+    @use "../styles/mixins/breakpoint.mixin" as breakpoints;
+
+    .scroll-down {
+        display: none;
+
+        @include breakpoints.breakpoint('s') {
+            @include fontfamily.font-family('main', 400);
+            font-size: pxtorem.rem(18);
+            position: absolute;
+            left: 40px;
+            top: 50%;
+            rotate: -90deg;
+            transform-origin: bottom left;
+            color: colors.$secondary-gray;
+            display: flex;
+            align-items: center;
+
+            &__icon {
+                display: inline-block;
+                margin-right: 10px;
+                animation: bounce 2s infinite;
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(0);
+            }
+            40% {
+                transform: translateX(-10px);
+            }
+            60% {
+                transform: translateX(-5px);
+            }
+            
+        }
+    }
+</style>

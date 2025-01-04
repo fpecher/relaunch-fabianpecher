@@ -1,0 +1,12 @@
+{
+    "title": "Launch Website",
+    "client": "klarhyte GmbH",
+    "typeOfProject": "WordPress",
+    "introText": "Für das Projekt klarhyte.de war ich verantwortlich für die Entwicklung eines individuellen WordPress-Themes sowie maßgeschneiderter Frontend-Module, die nahtlos mit dem Design harmonieren. Abschließend kümmerte ich mich um die sorgfältige Einpflege der Inhalte, um einen reibungslosen Launch der Website sicherzustellen.",
+    "projectColor": "#6bc9f1",
+    "year": "2024",
+    "linkToWebsite": "https://www.klarhyte.de/",
+    "mainImage": "./images/klarhyte/hero-image.png",
+    "otherImages": ["./images/klarhyte/screen-mobile.png"],
+    "tasks": ["Entwicklung WordPress-Theme", "Entwicklung Gutenberg-Blöcke", "Einpflege der Inhalte"]
+  }

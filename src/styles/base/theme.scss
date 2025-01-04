@@ -1,0 +1,6 @@
+@use '../setup/colors.setup' as colors;
+
+html.dark {
+    background-color: colors.$primary-gray;
+    color: colors.$white;
+}

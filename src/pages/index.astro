@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionDivided from '../components/sections/SectionDivided.astro';
+import Intro from '../components/Intro.astro';
+import SectionServices from '../components/sections/SectionServices.astro';
+import SectionAboutMe from '../components/sections/SectionAboutMe.astro';
+import SectionPortfolio from '../components/sections/SectionPortfolio.astro';
+
+const pageTitle = "Fabian Pecher [Frontend Developer & WordPress Specialist]";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    
+	<SectionDivided />
+    
+	<div class="container">
+		<Intro />
+		<SectionServices sectionTitle="Was mich ausmacht"/>
+		<SectionPortfolio />
+	</div>
+	<SectionAboutMe />
+
+</BaseLayout>

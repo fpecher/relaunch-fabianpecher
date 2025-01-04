@@ -1,0 +1,27 @@
+@use '../mixins/font-size.mixin' as fontsizes;
+@use '../mixins/spacing.mixin' as spacings;
+@use '../setup/colors.setup' as colors;
+
+.list {
+    &__item {
+      @include fontsizes.font-size(16);
+      @include spacings.spacing-inner('top', 10px);
+      @include spacings.spacing-inner('bottom', 10px);
+
+      font-family: 'Lora';
+      font-weight: 400;
+      color: colors.$secondary-gray;
+      line-height: 1.25;
+      text-align: center;
+  
+      &--left {
+        @include spacings.spacing-inner('top', 15px);
+        @include spacings.spacing-inner('bottom', 15px);
+        text-align: left;
+      }
+  
+      &:not(:last-of-type) {
+        border-bottom: 1px colors.$tertiary-gray solid;
+      }
+    }
+  }

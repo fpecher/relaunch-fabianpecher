@@ -1,0 +1,85 @@
+---
+import { Image } from 'astro:assets';
+import profileImage from '../../assets/images/fabian-pecher-500@2x.jpg';
+---
+
+<section class="section-about-me">
+    <div class="container">
+        <div class="row">
+            <div class="column column--12 -text-align--center">
+                <Image src={profileImage} class="image-profile" data-aos="fade-up" data-aos-duration="1000" width="250" height="250" alt="Profilbild von Fabian Pecher" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="column column--12 column--m-10 column--push-m-1">
+                <p class="-text-align--center -font-size--20 -spacing-outer-40" data-aos="fade-up" data-aos-duration="1000">
+                    Mein Name ist Fabian Pecher und Ende 2020 bin ich ins schöne
+                    Remstal gezogen.
+                </p>
+                <p class="-text-align--center -font-size--20 -spacing-outer-10" data-aos="fade-up" data-aos-duration="1000">
+                    Schon früh habe ich meine ersten Erfahrungen in der
+                    Gestaltung und Umsetzung von Websiten gesammelt und durch
+                    das 2-jährige <strong>Berufskolleg</strong> für Medientechnik
+                    an der <a href="https://www.akademie-bw.de/pforzheim.html" target="_blank" class="-link" rel="nofollow">Akademie für Kommunikation</a>
+                    festigte sich die Entscheidung, ein Teil der Medienwelt werden
+                    zu wollen. Nach erfolgreichem Bestehen meiner <strong>Fachhochschulreife</strong> begann ich 2010 die Ausbildung zum Mediengestalter Digital
+                    und Print. Durch meine <strong>selbstständige Tätigkeit</strong
+                    > parallel zu meiner Ausbildung lernte ich nicht nur, wie elementar
+                    eine deadline-gerechte Fertigstellung ist, sondern auch, wie
+                    wichtig Kundenbindung und stetiger Kundenkontakt ist. Seit Juli
+                    2014 bin ich <strong>staatlich geprüfter Mediengestalter mit Schwerpunkt Gestaltung und Technik.</strong>
+                </p>
+
+                <p class="-text-align--center -font-size--20 -spacing-outer-20" data-aos="fade-up" data-aos-duration="1000">
+                    Aktuell bin ich als Web Entwickler in einer
+                    Fullservice-Werbeagentur angestellt. Meine Aufgaben sind die
+                    Realisierung von statischen und CMS-basierten Websiten.
+                    Zusätzlich zu meiner Festanstellung war ich bis 2022 <strong>Gesellschafter</strong> der World of Beachsports GbR, die sich unter Anderem auf die
+                    Entwicklung einer Suchmaschine für Beachvolleyball-Felder und
+                    Community-Plattform für Beachvolleyballbegeisterte spezialisiert hat.
+                </p>
+            </div>
+        </div>
+        <!-- <div class="row" data-aos="fade-up" data-aos-duration="1000">
+        <div class="column column--12 -spacing-outer-90">
+          <h4>Downloads</h4>
+        </div>
+      </div>
+      <div class="row" data-aos="fade-up" data-aos-duration="1000">
+        <div class="column column--12 column--m-6 -spacing-outer-20">
+          <a href="assets/pdf/cv-fabian-pecher-2020.pdf" class="button-primary" target="_blank">
+            <span class="button-primary__box"></span>
+            <span class="button-primary__label">Mein Lebenslauf</span>
+          </a>
+        </div>
+      </div> -->
+    </div>
+</section>
+
+<style lang="scss">
+    @use '../../styles/setup/colors.setup' as colors;
+    @use '../../styles/mixins/breakpoint.mixin' as breakpoints;
+    @use '../../styles/mixins/spacing.mixin' as spacings;
+    
+    .section-about-me {
+        @include spacings.spacing-inner('top', 40);
+        @include spacings.spacing-inner('bottom', 40);
+        @include spacings.spacing-outer(30);
+        
+        background: colors.$tertiary-gray;
+
+        @include breakpoints.breakpoint('s') {
+            @include spacings.spacing-outer(70);
+            @include spacings.spacing-inner('top', 110);
+            @include spacings.spacing-inner('bottom', 110);
+        }
+    
+    }
+
+    .image-profile {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        max-width: 250px;
+    }
+</style>

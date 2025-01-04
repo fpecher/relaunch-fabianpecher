@@ -1,0 +1,79 @@
+---
+import heroImageBackground from "../../assets/images/hero-image-fpecher.jpg";
+---
+
+<section class="section-divided">
+    <div class="section-divided__box section-divided__box--left">
+        <div class="section-divided__content">
+            <h1>
+                Hallo!<br />
+                Ich bin Fabian
+            </h1>
+            <h3 class="-spacing-outer-60">
+                Frontend Developer &amp; WordPress Specialist
+            </h3>
+            <p class="-spacing-outer-35">
+                Und habe mich auf die Realisierung von Websiten in <strong>WordPress</strong> spezialisiert, beherrsche aber auch den Umgang mit anderen CMS
+                wie zum Beispiel Typo3 und Contao.
+            </p>
+        </div>
+
+        
+    </div>
+    <div class="section-divided__box section-divided__box--right" style={`background-image: url(${heroImageBackground.src})`}></div>
+</section>
+
+<style lang="scss">
+    @use '../../styles/mixins/breakpoint.mixin' as breakpoints;
+    @use '../../styles/setup/colors.setup' as colors;
+
+    .section-divided {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        
+        @include breakpoints.breakpoint('s') {
+            flex-direction: row;
+            height: 100vh;
+        }
+
+        &__box {
+            width: 100%;
+            height: auto;
+            background: colors.$tertiary-gray;
+            position: relative;
+            padding: 50px 0;
+        
+            @include breakpoints.breakpoint('s') {
+                width: 50%;
+                height: 100%;
+            }
+
+            &--left {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 50px 7%;
+            }
+
+            &--right {
+                background-size: cover !important;
+                background-repeat: no-repeat !important;
+                height: 50vh;
+
+                @include breakpoints.breakpoint('s') {
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    html.dark {
+        .section-divided {
+            &__box {
+                background: colors.$primary-gray;
+            }
+        }
+    }
+</style>

@@ -1,0 +1,49 @@
+---
+---
+<div class="cursor-custom">
+    <span class="cursor-custom__label">details ansehen</span>
+</div>
+
+<style lang="scss">
+    @use '../styles/mixins/breakpoint.mixin' as breakpoints;
+    @use '../styles/setup/colors.setup' as colors;
+
+    .cursor-custom {
+        display: none;
+
+        @include breakpoints.breakpoint('m') {
+            display: block;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: colors.$primary-gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            z-index: 10000;
+            transition: transform .3s;
+            pointer-events: none;
+            user-select: none;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            
+            &--hovered {
+                background: colors.$white;
+                width: 100px;
+                height: 100px;
+                transform: translate(-50%, -50%);
+            }
+
+            &__label {
+                display: none;
+                font-family: 'Lora';
+                color: colors.$secondary-gray;
+
+                &--hovered {
+                    display: block;
+                }
+            }
+        }
+    }
+</style>

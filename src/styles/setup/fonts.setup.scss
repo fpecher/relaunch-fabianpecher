@@ -1,0 +1,48 @@
+
+@font-face {
+    font-display: swap; 
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/ubuntu/ubuntu-v20-latin-300.woff2') format('woff2'),
+         url('../fonts/ubuntu/ubuntu-v20-latin-300.ttf') format('truetype');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/ubuntu/ubuntu-v20-latin-regular.woff2') format('woff2'), 
+         url('../fonts/ubuntu/ubuntu-v20-latin-regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/ubuntu/ubuntu-v20-latin-700.woff2') format('woff2'),
+         url('../fonts/ubuntu/ubuntu-v20-latin-700.ttf') format('truetype');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/lora/lora-v32-latin-regular.woff2') format('woff2'),
+         url('../fonts/lora/lora-v32-latin-regular.ttf') format('truetype');
+}
+  
+@font-face {
+    font-display: swap; 
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/lora/lora-v32-latin-700.woff2') format('woff2'),
+         url('../fonts/lora/lora-v32-latin-700.ttf') format('truetype');
+}
+
+$font-family-headlines: 'Ubuntu', sans-serif;
+$font-family-main: 'Lora', serif;

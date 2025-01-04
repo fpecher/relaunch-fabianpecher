@@ -1,0 +1,7 @@
+@use "../setup/variables.setup" as variables;
+
+.image {
+    &--rounded-corners {
+        border-radius: variables.$global-border-radius;
+    }
+}

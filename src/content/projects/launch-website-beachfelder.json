@@ -1,0 +1,12 @@
+{
+    "title": "Launch Website",
+    "client": "World of Beachsports GbR",
+    "typeOfProject": "Laravel & Livewire & AlpineJS",
+    "introText": "Die Website von Beachfelder.de wurde komplett neu aufgesetzt. Die alte Website war in die Jahre gekommen und entsprach nicht mehr den Anforderungen des Unternehmens. Die neue Website wurde mit Laravel, Livewire und AlpineJS umgesetzt. Die Website ist responsiv und bietet eine Vielzahl an Funktionen, wie z.B. die Verwaltung von Beachfeldern, die Anzeige von Turnieren und die Verwaltung von Turnieren.",
+    "projectColor": "#08b8b8",
+    "year": "2019",
+    "linkToWebsite": "https://www.beachfelder.de",
+    "mainImage": "./images/project-3/imac-beachfelder.jpg",
+    "otherImages": ["https://dummyimage.com/600x400/000/fff", "https://dummyimage.com/600x400/333/fff", "https://dummyimage.com/600x400/222/fff"],
+    "tasks": ["Design Frontend & Backend", "Entwicklung Frontend", "Verwaltung Datenbestand", "Stetige Verbesserung & Erweiterung"]
+  }

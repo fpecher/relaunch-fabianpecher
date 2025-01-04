@@ -1,0 +1,31 @@
+---
+import Header from "../components/Header.astro";
+import NavigationMeta from "../components/NavigationMeta.astro";
+import Footer from "../components/Footer.astro";
+
+import '../styles/main.scss';
+
+export const prerender = true;
+const { pageTitle, bodyClass } = Astro.props;
+---
+
+<html lang="de">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+
+        <title>{pageTitle}</title>
+    </head>
+    <body class={bodyClass}>
+        <Header/>
+        
+        <slot />
+
+        <NavigationMeta class="navigation-meta"/>
+        
+        <Footer />
+    </body>
+</html>
+

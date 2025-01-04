@@ -1,0 +1,12 @@
+{
+    "title": "Relaunch Website",
+    "client": "Hartmann SHF GmbH & Co. KG",
+    "typeOfProject": "WordPress",
+    "introText": "Beim Relaunch der Website hartmann-shf.de habe ich ein individuelles WordPress-Theme entwickelt, das optimal auf die Anforderungen des Projekts zugeschnitten ist. Zusätzlich war ich für die Erstellung spezifischer Gutenberg-Blöcke verantwortlich, die eine benutzerfreundliche und flexible Inhaltsverwaltung ermöglichen. Mit GSAP habe ich dynamische Animationen integriert, die der Seite einen modernen und interaktiven Charakter verleihen. Abschließend übernahm ich die Einpflege der Inhalte und war für die Schulung des Kunden zuständig.",
+    "projectColor": "#0085c9",
+    "year": "2023",
+    "linkToWebsite": "https://hartmann-shf.de",
+    "mainImage": "./images/hartmann-shf/hero-image.png",
+    "otherImages": ["./images/hartmann-shf/screen-mobile.png"],
+    "tasks": ["Entwicklung WordPress-Theme", "Entwicklung Gutenberg-Blöcke", "Animationen mit GSAP", "Einpflege der Inhalte", "Schulung des Kunden"]
+  }

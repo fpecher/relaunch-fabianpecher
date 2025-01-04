@@ -1,0 +1,12 @@
+{
+    "title": "Relaunch Website",
+    "client": "Plansecur Service GmbH & Co. KG",
+    "typeOfProject": "WordPress",
+    "introText": "Für die Website der Plansecur Service GmbH & Co. KG realisierte ich den Relaunch. Die Website wurde komplett neu aufgesetzt und auf WordPress umgestellt. Die Website ist responsiv und bietet eine Vielzahl an Funktionen, wie z.B. eine vollintegrierte Berater-Suche, die Anzeige von News und einer Pflegemaske für die Stellenangebote.",
+    "projectColor": "#222e3b",
+    "year": "2023",
+    "linkToWebsite": "https://www.plansecur.de",
+    "mainImage": "./images/plansecur/hero-image.png",
+    "otherImages": ["./images/plansecur/screen-mobile.png"],
+    "tasks": ["Entwicklung WordPress-Theme", "Entwicklung Gutenberg-Blöcke", "Entwicklung CPT für Stellenangebote", "Entwicklung CPT für Presseberichte", "Animationen mit GSAP", "Einpflege der Inhalte"]
+  }

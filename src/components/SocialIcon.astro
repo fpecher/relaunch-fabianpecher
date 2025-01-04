@@ -1,0 +1,43 @@
+---
+const { platform, username } = Astro.props;
+---
+
+<a href={`https://www.${platform}.com/${username}`} target="_blank" class="button-icon" rel="nofollow" aria-label={`Zu meinem ${platform} Profil`}>
+    <span class="button-icon__icon" data-feather={platform}></span>
+</a>
+
+<style lang="scss">
+    @use '../styles/mixins/breakpoint.mixin' as breakpoints;
+    @use '../styles/setup/colors.setup' as colors;
+    .button-icon {
+        $bem-block: &;
+
+        width: 45px;
+        height: 45px;
+        background: colors.$white;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 6px rgba(0,0,0, .16);
+        transition: .3s;
+
+        &:hover {
+            box-shadow: 0 0 18px rgba(0,0,0, .16);
+        }
+
+        &:hover #{$bem-block}__icon {
+            color: rgba(colors.$primary-gray, .8);
+        }
+
+        &__icon {
+            color: colors.$secondary-gray;
+            height: 20px;
+            transition: .2s;
+        }
+
+        & + #{$bem-block} {
+            margin-left: 6px;
+        }
+    }
+</style>

@@ -1,0 +1,12 @@
+{
+    "title": "Relaunch Website",
+    "client": "Evangelische Allianz in Deutschland e. V.",
+    "typeOfProject": "WordPress",
+    "introText": "Beim Relaunch der Website meinspring.de lag mein Fokus auf der Entwicklung eines maßgeschneiderten WordPress-Themes und spezifischer Gutenberg-Blöcke, die perfekt auf die Anforderungen des Projekts abgestimmt wurden. Diese Blöcke ermöglichen eine flexible und intuitive Inhaltsverwaltung. Zusätzlich habe ich dynamische Animationen mit GSAP integriert, um die Seite lebendig und ansprechend zu gestalten. Die Einpflege der Inhalte rundete meine Arbeit ab und sorgte für einen erfolgreichen Relaunch der Website.",
+    "projectColor": "#000",
+    "year": "2024",
+    "linkToWebsite": "https://www.meinspring.de",
+    "mainImage": "./images/meinspring/hero-image.png",
+    "otherImages": ["./images/meinspring/screen-mobile.png"],
+    "tasks": ["Entwicklung WordPress-Theme", "Entwicklung Gutenberg-Blöcke", "Animationen mit GSAP", "Einpflege der Inhalte"]
+  }

@@ -1,0 +1,15 @@
+---
+const { types, onFilterChange } = Astro.props;
+export const hydrate = 'load';
+---
+
+<div class="filter">
+    <label for="typeFilter">Filter nach Typ:</label>
+    <select id="typeFilter" onChange={(e) => onFilterChange(e.target.value)}>
+      <option value="all">Alle</option>
+      {types.map(type => (
+        <option value={type}>{type}</option>
+      ))}
+    </select>
+</div>
+

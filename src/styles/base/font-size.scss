@@ -1,0 +1,23 @@
+@use '../mixins/font-size.mixin' as fontsizes;
+
+.-font-size {
+  &--16 {
+    @include fontsizes.font-size(16);
+  }
+  
+  &--18 {
+    @include fontsizes.font-size(18);
+  }
+  
+  &--20 {
+    @include fontsizes.font-size(20);
+  }
+  
+  &--22 {
+    @include fontsizes.font-size(22);
+  }
+  
+  &--24 {
+    @include fontsizes.font-size(24);
+  }
+}

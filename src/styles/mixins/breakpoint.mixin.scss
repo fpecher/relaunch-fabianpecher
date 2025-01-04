@@ -1,0 +1,38 @@
+@use 'sass:math';
+@use 'sass:map';
+
+@use '../setup/breakpoints.map' as breakpoints;
+
+$breakpoints: breakpoints.$breakpoints !default;
+
+@mixin breakpoint($minBreakpoint: null, $maxBreakpoint: null) {
+  @if ($minBreakpoint and $maxBreakpoint) {
+    // Beide Breakpoints sind definiert
+    @if map.has-key($breakpoints, $minBreakpoint) and map.has-key($breakpoints, $maxBreakpoint) {
+      @media (min-width: #{map.get($breakpoints, $minBreakpoint)}) and (max-width: calc(#{map.get($breakpoints, $maxBreakpoint)} - 1px)) {
+        @content;
+      }
+    } @else {
+      // Fallback, wenn Breakpoints keine Map-Schlüssel sind
+      @if math.is-unitless($minBreakpoint) { $minBreakpoint: $minBreakpoint * 1px; }
+      @if math.is-unitless($maxBreakpoint) { $maxBreakpoint: $maxBreakpoint * 1px; }
+
+      @media (min-width: $minBreakpoint) and (max-width: $maxBreakpoint) {
+        @content;
+      }
+    }
+  } @else if ($minBreakpoint) {
+    // Nur minBreakpoint definiert
+    @if map.has-key($breakpoints, $minBreakpoint) {
+      @media (min-width: #{map.get($breakpoints, $minBreakpoint)}) {
+        @content;
+      }
+    } @else {
+      @if math.is-unitless($minBreakpoint) { $minBreakpoint: $minBreakpoint * 1px; }
+
+      @media (min-width: $minBreakpoint) {
+        @content;
+      }
+    }
+  }
+}

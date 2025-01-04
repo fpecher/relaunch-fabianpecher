@@ -1,0 +1,47 @@
+---
+const { class: className, ...rest } = Astro.props;
+---
+
+<nav class={className} {...rest}>
+    <a href="/impressum/" class="navigation-meta__link">Impressum</a>
+    <a href="/datenschutz/" class="navigation-meta__link">Datenschutz</a>
+</nav>
+
+<style lang="scss" is:global>
+    @use "../styles/setup/colors.setup" as colors;
+    @use "../styles/mixins/breakpoint.mixin" as breakpoints;
+    @use "../styles/mixins/font-size.mixin" as fontsizes;
+
+    .navigation-meta {
+        $bem-block: &;
+
+        display: none;
+
+        @include breakpoints.breakpoint("s") {
+            display: inline;
+            position: fixed;
+            z-index: 1;
+            left: 40px;
+            bottom: 40px;
+        }
+
+        &__link {
+            @include fontsizes.font-size(16);
+
+            color: colors.$secondary-gray;
+            font-family: "Lora";
+            font-weight: 400;
+            text-decoration: none;
+            display: inline-block;
+            transition: .2s;
+
+            &:hover {
+                color: colors.$primary-gray;
+            }
+
+            & + #{$bem-block}__link {
+                margin-left: 20px;
+            }
+        }
+    }
+</style>

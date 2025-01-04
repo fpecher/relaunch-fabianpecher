@@ -1,0 +1,197 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ScrollDown from '../../components/ScrollDown.astro';
+
+export async function getStaticPaths () {   
+    const projects = await getCollection("projects");
+    return projects.map((project) => ({
+        params: {
+            id: project.id
+        },
+        props: { project}
+    }));
+};
+
+const { project } = Astro.props;
+const {id} = Astro.params;
+const {title, mainImage, otherImages, client, typeOfProject, year, projectColor, introText, linkToWebsite, tasks} = project.data;
+const pageTitle = "Projekt | " + title + ' ' + client;
+---
+
+<BaseLayout pageTitle={pageTitle} bodyClass="page page--project-detail">
+    <div class="project-detail__hero-image">
+        <ScrollDown />
+        <Image src={mainImage} width={500} height={250} alt={title} />
+    </div>
+    
+    <div class="section section--fullwidth project-detail__meta-section">
+        <div class="container">
+            <div class="row">
+                <div class="column column--xs-12 column--s-4 -spacing-outer-10">
+                    <p class="project-detail__meta" data-aos="fade-up" data-aos-duration="750" data-aos-delay=0>
+                        KUNDE<br>
+                        <span> {client}</span>
+                    </p>
+                </div>
+                <div class="column column--xs-12 column--s-4 -spacing-outer-10">
+                    <p class="project-detail__meta" data-aos="fade-up" data-aos-duration="750" data-aos-delay=150>
+                        TECHNOLOGIE<br>
+                        <span> {typeOfProject}</span>
+                    </p>
+                </div>
+                <div class="column column--xs-12 column--s-4 -spacing-outer-10">
+                    <p class="project-detail__meta" data-aos="fade-up" data-aos-duration="750" data-aos-delay=300>
+                        JAHR<br>
+                        <span> {year}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="column column--xs-12 column--6 column--s-8 -spacing-outer-40">
+                <p class="project-detail__subtitle" data-aos="fade-up" data-aos-duration="750">Das Projekt</p>
+                <p class="-spacing-outer-20" data-aos="fade-up" data-aos-duration="750"> {introText} </p>
+            </div>
+
+            <div class="column column--xs-12 column--6 column--s-4 -spacing-outer-40">
+                <div class="project-detail__tasks">
+                    <p class="project-detail__subtitle" data-aos="fade-up" data-aos-duration="750">Meine Aufgaben</p>
+                    <ul class="list -spacing-outer-20" data-aos="fade-up" data-aos-duration="750" data-aos-delay=300>
+                        {tasks.map((task) => (
+                            <li class="list__item list__item--left">{task}</li>
+                        ))}
+                    </ul>
+                    <p class="-spacing-outer-30" data-aos="fade-up" data-aos-duration="750" >
+                        <a class="project-detail__external-link" href={`${linkToWebsite}`} target="_blank" rel="external nofollow">
+                            <span>Zur Website</span>
+                            <span class="icon" data-feather="external-link"></span>
+                        </a>    
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            {otherImages.map((image) => (
+                <div class="column column--xs-12 column--s-12 column--m-12 -spacing-outer-40" data-aos="fade-up" data-aos-duration="850" data-aos-delay="500"><Image src={image} width={1200} height={800} alt={title} class="image image--rounded-corners"/></div>
+            ))}
+        </div>
+
+        <div class="row">
+            <div class="column column--12 -spacing-outer-40">
+                <p class="-text-align--center">
+                    <a class="-link" href="/#section-portfolio">Zurück zur Übersicht</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</BaseLayout>
+
+<style lang="scss" define:vars={{projectColor}}>
+    @use '../../styles/mixins/spacing.mixin' as spacings;
+    @use '../../styles/mixins/breakpoint.mixin' as breakpoints;
+    @use '../../styles/mixins/font-family.mixin' as fontfamily;
+    @use '../../styles/setup/colors.setup' as colors;
+    @use '../../styles/setup/pxtorem.func' as pxtorem;
+
+    .project-detail {
+        &__hero-image {
+            opacity: 0;
+            position: relative;
+            width: 100vw;
+            height: auto;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            transition: opacity 1s ease-out;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &--loaded {
+                opacity: 1;
+            }
+        }
+
+        &__meta-section {
+            @include spacings.spacing-inner('top', 10);
+            @include spacings.spacing-inner('bottom', 20);
+            @include spacings.spacing-outer(-3);
+
+            background-color: colors.$tertiary-gray;
+            background-color: var(--projectColor);
+        }
+
+        &__meta {
+            @include fontfamily.font-family('headlines');
+            
+            font-size: pxtorem.rem(14);
+            text-align: left;
+            color: colors.$white;
+
+            span {
+                @include fontfamily.font-family('main', 400);
+                font-size: pxtorem.rem(16);
+                color: colors.$white;
+            }
+
+            @include breakpoints.breakpoint('s') {
+                text-align: center;
+            }
+        }
+
+        &__subtitle {
+            @include fontfamily.font-family('headlines');
+            font-size: pxtorem.rem(20);
+            color: colors.$primary-gray;
+        }
+
+        &__tasks {
+            @include spacings.spacing-inner('all', 20);
+
+            background: colors.$tertiary-gray;
+            border-radius: 8px;
+
+            ul li {
+                &:not(:last-of-type) {
+                    border-bottom: 1px #b8b8b8 solid;
+                }
+            }
+        }
+
+        &__external-link {
+            @include fontfamily.font-family('headlines', 400);
+
+            font-size: pxtorem.rem(16);
+            color: colors.$secondary-gray;
+            border: 1px solid colors.$secondary-gray;
+            padding: 8px 15px;
+            transition: .2s ease-in-out;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            
+            &:hover {
+                color: colors.$white;
+                background-color: colors.$secondary-gray;
+            }
+
+            .icon {
+                margin-left: 10px;
+            }
+        }
+    }
+    
+    img {
+        width: 100%;
+        height: auto;
+    }
+</style>

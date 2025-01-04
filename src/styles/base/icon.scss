@@ -1,0 +1,14 @@
+@use '../mixins/font-size.mixin' as fontsizes;
+@use '../setup/pxtorem.func' as pxtorem;
+@use '../setup/colors.setup' as colors;
+
+.icon {
+    @include fontsizes.font-size(14);
+    
+    vertical-align: text-bottom;
+    width: pxtorem.rem(18);
+  
+    &--red {
+      color: colors.$red;
+    }
+  }

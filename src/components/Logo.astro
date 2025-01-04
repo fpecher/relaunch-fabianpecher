@@ -1,0 +1,47 @@
+---
+import fpecherLogo from '../assets/images/logo.svg';
+---
+
+<a id="logo" href="/" class="logo">
+    <img src={fpecherLogo.src} class="logo__image" width="100" height="100" alt="Logo Fabian Pecher | Frontend Developer & WordPress Specialist">
+</a>
+
+<style lang="scss">
+    @use '../styles/setup/pxtorem.func' as pxtorem;
+    @use '../styles/setup/colors.setup' as colors;
+    @use '../styles/mixins/breakpoint.mixin' as breakpoints;
+    @use '../styles/mixins/spacing.mixin' as spacings;
+
+.logo {
+    @include spacings.spacing-inner('all', 20);
+
+    background: colors.$white;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(0,0,0, .16);
+    z-index: 1;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: .6s ease-in-out;
+
+    @include breakpoints.breakpoint('s') {
+        width: 100px;
+        height: 100px;
+    }
+
+    &--scrolled {
+        width: 62px;
+        height: 62px;
+        transform: translateY(-100%) translateX(-50%);
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+}
+</style>
