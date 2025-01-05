@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ScrollDown from '../../components/ScrollDown.astro';
+import DOMPurify from 'isomorphic-dompurify';
 
 export async function getStaticPaths () {   
     const projects = await getCollection("projects");
@@ -16,17 +17,18 @@ export async function getStaticPaths () {
 
 const { project } = Astro.props;
 const {id} = Astro.params;
-const {title, mainImage, otherImages, client, typeOfProject, year, projectColor, introText, linkToWebsite, tasks} = project.data;
+const {title, mainImage, otherImages, client, typeOfProject, year, projectColor, introText, linkToWebsite, tasks, tags} = project.data;
 const pageTitle = "Projekt | " + title + ' ' + client;
+const sanitizedIntroText = DOMPurify.sanitize(introText);
 ---
 
 <BaseLayout pageTitle={pageTitle} bodyClass="page page--project-detail">
     <div class="project-detail__hero-image">
-        <ScrollDown />
+        <ScrollDown anchor="project-details" />
         <Image src={mainImage} width={500} height={250} alt={title} />
     </div>
     
-    <div class="section section--fullwidth project-detail__meta-section">
+    <div class="section section--fullwidth project-detail__meta-section" id="project-details">
         <div class="container">
             <div class="row">
                 <div class="column column--xs-12 column--s-4 -spacing-outer-10">
@@ -55,7 +57,15 @@ const pageTitle = "Projekt | " + title + ' ' + client;
         <div class="row">
             <div class="column column--xs-12 column--6 column--s-8 -spacing-outer-40">
                 <p class="project-detail__subtitle" data-aos="fade-up" data-aos-duration="750">Das Projekt</p>
-                <p class="-spacing-outer-20" data-aos="fade-up" data-aos-duration="750"> {introText} </p>
+                <p
+                    class="-spacing-outer-20"
+                    data-aos="fade-up"
+                    data-aos-duration="750" set:html={sanitizedIntroText}></p>
+                <p class="-spacing-outer-30" data-aos="fade-up" data-aos-duration="750">
+                    {tags.map((tag) => (
+                        <span class="tag">#{tag}</span>
+                    ))}
+                </p>
             </div>
 
             <div class="column column--xs-12 column--6 column--s-4 -spacing-outer-40">
@@ -83,7 +93,7 @@ const pageTitle = "Projekt | " + title + ' ' + client;
                         <div class="glide__slides">
                             {otherImages.map((image) => (
                                 <div class="glide__slide">
-                                    <Image src={image} width={1200} height={800} alt={title} class="image image--rounded-corners"/>
+                                    <Image src={image} width={1200} height={800} alt={title} loading="eager" class="image image--rounded-corners"/>
                                 </div>
                             ))}
                         </div>
@@ -96,6 +106,11 @@ const pageTitle = "Projekt | " + title + ' ' + client;
                             <span class="icon" data-feather="arrow-right"></span>
                         </button>
                     </div>
+                    <div class="glide__bullets" data-glide-el="controls[nav]">
+                        {otherImages.map((_, index) => (
+                            <button class="glide__bullet" data-glide-dir={`=${index}`}></button>
+                        ))}
+                      </div>
                 </div>
             </div>
         </div>

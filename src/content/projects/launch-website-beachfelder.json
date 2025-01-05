@@ -2,12 +2,20 @@
     "title": "Launch Website",
     "client": "World of Beachsports GbR",
     "typeOfProject": "Laravel & Livewire & AlpineJS",
-    "introText": "Die Website von Beachfelder.de wurde komplett neu aufgesetzt. Die alte Website war in die Jahre gekommen und entsprach nicht mehr den Anforderungen des Unternehmens. Die neue Website wurde mit Laravel, Livewire und AlpineJS umgesetzt. Die Website ist responsiv und bietet eine Vielzahl an Funktionen, wie z.B. die Verwaltung von Beachfeldern, die Anzeige von Turnieren und die Verwaltung von Turnieren.",
+    "introText": "Beim Launch von beachfelder.de war ich für die <strong>gesamte Konzeption</strong> der Website verantwortlich, einschließlich der Entwicklung eines <strong>Bewertungs- und Suchsystems</strong> für Beachvolleyballfelder in Deutschland. Ich habe das Design des Frontends erarbeitet und die Umsetzung mit modernen Technologien wie <strong>Livewire und AlpineJS</strong> realisiert, um eine interaktive und benutzerfreundliche Oberfläche zu schaffen. Besonders hervorzuheben ist das Login-System, das es Nutzern ermöglicht, Favoriten zu speichern, Bilder hochzuladen und ihre <strong>Bewertungen abzugeben</strong>. Die Website bietet außerdem die Möglichkeit, Lifestyle-Bilder zu Beachvolleyball-Feldern hinzuzufügen. Selbstverständlich ist die Seite responsive und passt sich verschiedenen Endgeräten an. Die Daten der Beachvolleyballfelder wurden händisch gepflegt.",
     "projectColor": "#08b8b8",
     "year": "2019",
     "linkToWebsite": "https://www.beachfelder.de",
     "mainImage": "./images/beachfelder/hero-image.png",
-    "otherImages": ["https://dummyimage.com/600x400/000/fff", "https://dummyimage.com/600x400/333/fff", "https://dummyimage.com/600x400/222/fff"],
+    "otherImages": [
+        "./images/beachfelder/slider/screen-desktop_search-result-map.png",
+        "./images/beachfelder/slider/screen-desktop_search-results.png",
+        "./images/beachfelder/slider/screen-desktop_beachfeld-informationen.png",
+        "./images/beachfelder/slider/screen-desktop_rating.png",
+        "./images/beachfelder/slider/screen-desktop_image-uploads.png",
+        "./images/beachfelder/slider/screen-desktop_user-profile.png"
+    ],
     "tasks": ["Design Frontend & Backend", "Entwicklung Frontend", "Verwaltung Datenbestand", "Stetige Verbesserung & Erweiterung"],
+    "tags": ["Laravel", "Livewire", "AlpineJS", "responsive", "Custom Design", "User Login", "Rating System"],
     "order": 5
   }

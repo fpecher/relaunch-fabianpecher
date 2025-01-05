@@ -2,12 +2,17 @@
     "title": "Launch Website",
     "client": "klarhyte GmbH",
     "typeOfProject": "WordPress",
-    "introText": "Für das Projekt klarhyte.de war ich verantwortlich für die Entwicklung eines individuellen WordPress-Themes sowie maßgeschneiderter Frontend-Module, die nahtlos mit dem Design harmonieren. Abschließend kümmerte ich mich um die sorgfältige Einpflege der Inhalte, um einen reibungslosen Launch der Website sicherzustellen.",
+    "introText": "Für den Launch der Website klarhyte.de habe ich ein <strong>maßgeschneidertes WordPress-Theme</strong> entwickelt, das optimal zum Designkonzept passt, und flexible Frontend-Module umgesetzt. Mit GSAP habe ich Animationen integriert, die der Seite eine lebendige und interaktive Note verleihen. Natürlich ist die Seite vollständig responsive und für verschiedene Endgeräte optimiert. Abschließend habe ich die Inhalte eingepflegt, um einen reibungslosen und pünktlichen Launch zu gewährleisten.",
     "projectColor": "#6bc9f1",
     "year": "2024",
     "linkToWebsite": "https://www.klarhyte.de/",
     "mainImage": "./images/klarhyte/hero-image.png",
-    "otherImages": ["./images/klarhyte/screen-mobile.png"],
+    "otherImages": [
+        "./images/klarhyte/slider/screen-desktop_schwerpunkte-accordion.png",
+        "./images/klarhyte/slider/screen-desktop_text-highlighter.png",
+        "./images/klarhyte/slider/screen-desktop_teaser-columns.png"
+    ],
     "tasks": ["Entwicklung WordPress-Theme", "Entwicklung Gutenberg-Blöcke", "Einpflege der Inhalte"],
+    "tags": ["WordPress", "Gutenberg-Editor", "Custom Post Type", "GSAP", "responsive", "Custom Theme"],
     "order": 3
   }

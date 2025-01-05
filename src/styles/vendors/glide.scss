@@ -1,2 +1,70 @@
 @use "../../../node_modules/@glidejs/glide/src/assets/sass/glide.core" as glide-core;
-@use "../../../node_modules/@glidejs/glide/src/assets/sass/glide.theme" as glide-theme;
+@use "../setup/colors.setup" as colors;
+@use "../setup/variables.setup" as variables;
+
+.glide {
+    padding-bottom: 40px;
+
+    &__arrow {
+        position: absolute;
+        display: block;
+        top: 50%;
+        z-index: 2;
+        color: colors.$white;
+        text-transform: uppercase;
+        padding: 9px 12px;
+        background-color: colors.$secondary-gray;
+        border: 1px solid colors.$secondary-gray;
+        border-radius: variables.$global-border-radius;
+        opacity: 1;
+        transform: translateY(-50%);
+        line-height: 1;
+
+        &:hover {
+            border: 1px solid colors.$secondary-gray;
+            background: colors.$primary-gray;
+            color: colors.$white;
+        }
+
+        &--left {
+            left: 10px;
+        }
+
+        &--right {
+            right: 10px;
+        }
+    }
+
+    &__bullets {
+        position: absolute;
+        z-index: 2;
+        bottom: 20px;
+        left: 50%;
+        display: inline-flex;
+        list-style: none;
+        transform: translateX(-50%);
+    }
+
+    &__bullet {
+        background-color: colors.$secondary-gray;
+        width: 35px;
+        height: 3px;
+        padding: 0;
+        border-radius: variables.$global-border-radius;
+        border: 2px solid transparent;
+        transition: .3s ease-in-out;
+        line-height: 0;
+        margin-inline: 4px;
+
+        &:hover,
+        &:focus {
+            background-color: colors.$primary-gray;
+            border-color: colors.$primary-gray;
+        }
+
+        &--active {
+            background-color: colors.$primary-gray;
+            border-color: colors.$primary-gray;
+        }
+    }
+}

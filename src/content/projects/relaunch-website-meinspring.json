@@ -2,12 +2,17 @@
     "title": "Relaunch Website",
     "client": "Evangelische Allianz in Deutschland e. V.",
     "typeOfProject": "WordPress",
-    "introText": "Beim Relaunch der Website meinspring.de lag mein Fokus auf der Entwicklung eines maßgeschneiderten WordPress-Themes und spezifischer Gutenberg-Blöcke, die perfekt auf die Anforderungen des Projekts abgestimmt wurden. Diese Blöcke ermöglichen eine flexible und intuitive Inhaltsverwaltung. Zusätzlich habe ich dynamische Animationen mit GSAP integriert, um die Seite lebendig und ansprechend zu gestalten. Die Einpflege der Inhalte rundete meine Arbeit ab und sorgte für einen erfolgreichen Relaunch der Website.",
+    "introText": "Beim Relaunch von meinspring.de lag mein Fokus auf der Entwicklung eines individuellen WordPress-Themes sowie der Erstellung <strong>spezifischer Gutenberg-Blöcke</strong>, die eine einfache und flexible Inhaltsverwaltung ermöglichen. Mit <strong>GSAP</strong> habe ich interaktive Animationen integriert, die das Nutzererlebnis bereichern. Die Website ist selbstverständlich responsive und für alle Bildschirmgrößen optimiert. Zum Abschluss habe ich die Inhalte eingepflegt.",
     "projectColor": "#000",
     "year": "2024",
     "linkToWebsite": "https://www.meinspring.de",
     "mainImage": "./images/meinspring/hero-image.png",
-    "otherImages": ["./images/meinspring/screen-mobile.png"],
+    "otherImages": [
+        "./images/meinspring/slider/screen-desktop_circular-section.png",
+        "./images/meinspring/slider/screen-desktop_programm_popup-open.png",
+        "./images/meinspring/slider/screen-desktop_programm-location-tabs.png"
+    ],
     "tasks": ["Entwicklung WordPress-Theme", "Entwicklung Gutenberg-Blöcke", "Animationen mit GSAP", "Einpflege der Inhalte"],
+    "tags": ["WordPress", "Gutenberg-Editor",  "Custom Post Type", "GSAP", "responsive", "Custom Theme"],
     "order": 2
   }

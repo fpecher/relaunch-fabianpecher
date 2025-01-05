@@ -1,0 +1,19 @@
+@use "../setup/colors.setup" as colors;
+@use "../setup/variables.setup" as variables;
+@use "../setup/pxtorem.func" as pxtorem;
+@use "../mixins/font-family.mixin" as fontfamily;
+
+.tag {
+    @include fontfamily.font-family('headlines', 400);
+
+    border-radius: 20px;
+    display: inline-block;
+    padding: 2px 12px;
+    background: colors.$tertiary-gray;
+    color: colors.$secondary-gray;
+    font-size: pxtorem.rem(12);
+
+    & + & {
+        margin-left: 8px;
+    }
+}

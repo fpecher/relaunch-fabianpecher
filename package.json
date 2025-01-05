@@ -13,6 +13,7 @@
     "aos": "^2.3.4",
     "astro": "^5.1.1",
     "feather-icons": "^4.29.2",
+    "isomorphic-dompurify": "^2.19.0",
     "jquery": "^3.7.1",
     "sass": "^1.83.0"
   }

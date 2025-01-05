@@ -2,12 +2,17 @@
     "title": "Launch Website",
     "client": "NEUNZEHN03",
     "typeOfProject": "WordPress",
-    "introText": "Beim Launch der Website 9zehn03.de war ich für das gesamte Design der Website verantwortlich und entwickelte ein maßgeschneidertes WordPress-Theme, das das visuelle Konzept optimal umsetzt. Zusätzlich habe ich spezifische Gutenberg-Blöcke erstellt, um die Inhaltsverwaltung zu erleichtern, sowie ein Custom Post Type (CPT) für die Speisekarten entwickelt. Die Einpflege der Inhalte rundete meine Arbeit ab und trug zu einem erfolgreichen Launch der Website bei.",
+    "introText": "Beim Launch der Website 9zehn03.de war ich für das Design sowie die Entwicklung eines maßgeschneiderten WordPress-Themes verantwortlich. Zusätzlich habe ich spezielle Gutenberg-Blöcke entwickelt, die eine einfache Inhaltsverwaltung ermöglichen. Für die <strong>Speisekarten</strong> habe ich einen <strong>Custom Post Type</strong> erstellt. Selbstverständlich ist die Seite responsive und passt sich allen Endgeräten an. Zum Abschluss habe ich die Inhalte eingepflegt und die Website erfolgreich live geschaltet.",
     "projectColor": "#d4a965",
     "year": "2018",
     "linkToWebsite": "https://www.9zehn03.de/",
     "mainImage": "./images/neunzehn03/hero-image.png",
-    "otherImages": ["./images/neunzehn03/hero-image.png", "./images/neunzehn03/hero-image.png"],
+    "otherImages": [
+        "./images/neunzehn03/slider/screen-desktop_teaser-startseite.png",
+        "./images/neunzehn03/slider/screen-desktop_speisekarte.png",
+        "./images/neunzehn03/slider/screen-desktop_beispiel-unterseite.png"
+    ],
     "tasks": ["Design des Themes", "Entwicklung WordPress-Theme", "Entwicklung CPT für Speisekarte", "Design des Inhalts", "Einpflege der Inhalte"],
+    "tags": ["WordPress", "Gutenberg-Editor", "Custom Post Type", "responsive", "Custom Theme", "Custom Design"],
     "order": 6
   }

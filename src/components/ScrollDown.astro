@@ -1,9 +1,31 @@
 ---
+const anchor = Astro.props;
 ---
-<div class="scroll-down">
+<a class="scroll-down" href={`#${anchor.anchor}`}>
     <span class="scroll-down__icon" data-feather="arrow-left"></span>
     <span>Scroll down</span>
-</div>
+</a>
+
+<script type="module">
+    document.querySelectorAll('.scroll-down').forEach(anchor => {
+        anchor.addEventListener('click', event => {
+            event.preventDefault();
+
+            let anchorElement = event.target.closest('a');
+            if (anchorElement && anchorElement.href) {
+                let URL = anchorElement.href.split('#');
+
+                if (URL[1]) {
+                    let element = document.getElementById(URL[1]);
+                    if (element) {
+                        let offset = element.offsetTop;
+                        window.scrollTo(0, offset);
+                    }
+                }
+            }
+        });
+    });
+</script>
 
 <style lang="scss">
     @use "../styles/setup/colors.setup" as colors;
@@ -25,6 +47,13 @@
             color: colors.$secondary-gray;
             display: flex;
             align-items: center;
+            text-decoration: none;
+            transition: .2s ease;
+            z-index: 1;
+
+            &:hover {
+                color: colors.$white;
+            }
 
             &__icon {
                 display: inline-block;

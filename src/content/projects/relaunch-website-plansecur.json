@@ -2,12 +2,17 @@
     "title": "Relaunch Website",
     "client": "Plansecur Service GmbH & Co. KG",
     "typeOfProject": "WordPress",
-    "introText": "Für die Website der Plansecur Service GmbH & Co. KG realisierte ich den Relaunch. Die Website wurde komplett neu aufgesetzt und auf WordPress umgestellt. Die Website ist responsiv und bietet eine Vielzahl an Funktionen, wie z.B. eine vollintegrierte Berater-Suche, die Anzeige von News und einer Pflegemaske für die Stellenangebote.",
+    "introText": "Beim Relaunch von plansecur.de war ich für die Entwicklung eines maßgeschneiderten WordPress-Themes verantwortlich, das die Anforderungen der Seite perfekt abdeckt. Ich habe spezielle Gutenberg-Blöcke entwickelt, die die Inhaltsverwaltung vereinfachen, und zwei <strong>Custom Post Types</strong> erstellt: einen für Stellenangebote und einen für Presseberichte. Mit GSAP habe ich interaktive Animationen eingebaut, die das Nutzererlebnis bereichern. Besonders hervorzuheben ist die <strong>Berater-Suche</strong>, bei der Nutzer ihren persönlichen Berater als Ansprechpartner festlegen können, sowie die Erstellung von Berater-Profilen. Natürlich ist die gesamte Seite responsive und passt sich optimal an verschiedene Endgeräte an. Zum Abschluss habe ich die Inhalte eingepflegt und den Relaunch begleitet.",
     "projectColor": "#222e3b",
     "year": "2023",
     "linkToWebsite": "https://www.plansecur.de",
     "mainImage": "./images/plansecur/hero-image.png",
-    "otherImages": ["./images/plansecur/screen-mobile.png", "./images/hartmann-shf/screen-mobile.png", "./images/meinspring/screen-mobile.png"],
+    "otherImages": [
+        "./images/plansecur/slider/screen-desktop_open-search.png",
+        "./images/plansecur/slider/screen-desktop_show-search-results.png",
+        "./images/plansecur/slider/screen-desktop_show-selected-consultant.png"
+    ],
     "tasks": ["Entwicklung WordPress-Theme", "Entwicklung Gutenberg-Blöcke", "Entwicklung CPT für Stellenangebote", "Entwicklung CPT für Presseberichte", "Animationen mit GSAP", "Einpflege der Inhalte"],
+    "tags": ["WordPress", "Gutenberg-Editor", "GSAP",  "Custom Post Type", "responsive", "Custom Theme"],
     "order": 1
   }
