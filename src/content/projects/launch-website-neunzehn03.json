@@ -1,4 +1,5 @@
 {
+    "order": 6,
     "title": "Launch Website",
     "client": "NEUNZEHN03",
     "typeOfProject": "WordPress",
@@ -13,6 +14,5 @@
         "./images/neunzehn03/slider/screen-desktop_beispiel-unterseite.png"
     ],
     "tasks": ["Design des Themes", "Entwicklung WordPress-Theme", "Entwicklung CPT für Speisekarte", "Design des Inhalts", "Einpflege der Inhalte"],
-    "tags": ["WordPress", "Gutenberg-Editor", "Custom Post Type", "responsive", "Custom Theme", "Custom Design"],
-    "order": 6
+    "tags": ["WordPress", "Gutenberg-Editor", "Custom Post Type", "responsive", "Custom Theme", "Custom Design"]
   }

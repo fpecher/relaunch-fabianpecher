@@ -124,6 +124,13 @@ const sanitizedIntroText = DOMPurify.sanitize(introText);
         </div>
     </div>
 </BaseLayout>
+
+<script>
+    import { glideInit } from "../../scripts/glide";
+    
+    glideInit('.glide--project-detail-image-slider');
+</script>
+
 <style lang="scss" define:vars={{projectColor}}>
     @use '../../styles/mixins/spacing.mixin' as spacings;
     @use '../../styles/mixins/breakpoint.mixin' as breakpoints;

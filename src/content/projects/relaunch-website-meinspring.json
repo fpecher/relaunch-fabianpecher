@@ -1,4 +1,5 @@
 {
+    "order": 2,
     "title": "Relaunch Website",
     "client": "Evangelische Allianz in Deutschland e. V.",
     "typeOfProject": "WordPress",
@@ -13,6 +14,5 @@
         "./images/meinspring/slider/screen-desktop_programm-location-tabs.png"
     ],
     "tasks": ["Entwicklung WordPress-Theme", "Entwicklung Gutenberg-Blöcke", "Animationen mit GSAP", "Einpflege der Inhalte"],
-    "tags": ["WordPress", "Gutenberg-Editor",  "Custom Post Type", "GSAP", "responsive", "Custom Theme"],
-    "order": 2
-  }
+    "tags": ["WordPress", "Gutenberg-Editor",  "Custom Post Type", "GSAP", "responsive", "Custom Theme"]
+  }  

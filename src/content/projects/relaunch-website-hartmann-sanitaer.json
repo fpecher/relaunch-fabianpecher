@@ -1,4 +1,5 @@
 {
+    "order": 5,
     "title": "Relaunch Website",
     "client": "Hartmann SHF GmbH & Co. KG",
     "typeOfProject": "WordPress",
@@ -13,6 +14,5 @@
         "./images/hartmann-shf/slider/screen-desktop_timeline.png"
     ],
     "tasks": ["Entwicklung WordPress-Theme", "Entwicklung Gutenberg-Blöcke", "Animationen mit GSAP", "Einpflege der Inhalte", "Schulung des Kunden"],
-    "tags": ["WordPress", "Gutenberg-Editor", "Custom Post Type", "GSAP", "responsive", "Custom Theme"],
-    "order": 4
+    "tags": ["WordPress", "Gutenberg-Editor", "Custom Post Type", "GSAP", "responsive", "Custom Theme"]
   }

@@ -21,6 +21,17 @@ const sortedProjects = projects.sort((a, b) => a.data.order - b.data.order);
     </div>
 
     <div class="row">
-        {sortedProjects.map((project) => <div class="column column--xs-12 column--l-12 -spacing-outer-50"  data-aos="fade-up" data-aos-duration="1000"><TeaserProject project={project}/></div> )}
+        {sortedProjects.map((project, index) => {
+            const isLastTwo = index >= sortedProjects.length - 2;
+            const columnClasses = isLastTwo
+              ? "column column--xs-12 column--l-6 -spacing-outer-50"
+              : "column column--xs-12 column--l-12 -spacing-outer-50";
+          
+            return (
+              <div class={columnClasses} data-aos="fade-up" data-aos-duration="1000" >
+                <TeaserProject project={project} />
+              </div>
+            );
+          })}
     </div>
 </section>

@@ -1,4 +1,5 @@
 {
+    "order": 1,
     "title": "Relaunch Website",
     "client": "Plansecur Service GmbH & Co. KG",
     "typeOfProject": "WordPress",
@@ -13,6 +14,5 @@
         "./images/plansecur/slider/screen-desktop_show-selected-consultant.png"
     ],
     "tasks": ["Entwicklung WordPress-Theme", "Entwicklung Gutenberg-Blöcke", "Entwicklung CPT für Stellenangebote", "Entwicklung CPT für Presseberichte", "Animationen mit GSAP", "Einpflege der Inhalte"],
-    "tags": ["WordPress", "Gutenberg-Editor", "GSAP",  "Custom Post Type", "responsive", "Custom Theme"],
-    "order": 1
+    "tags": ["WordPress", "Gutenberg-Editor", "GSAP",  "Custom Post Type", "responsive", "Custom Theme"]
   }

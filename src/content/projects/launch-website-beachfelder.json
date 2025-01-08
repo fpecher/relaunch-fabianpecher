@@ -1,4 +1,5 @@
 {
+    "order": 3,
     "title": "Launch Website",
     "client": "World of Beachsports GbR",
     "typeOfProject": "Laravel & Livewire & AlpineJS",
@@ -16,6 +17,5 @@
         "./images/beachfelder/slider/screen-desktop_user-profile.png"
     ],
     "tasks": ["Design Frontend & Backend", "Entwicklung Frontend", "Verwaltung Datenbestand", "Stetige Verbesserung & Erweiterung"],
-    "tags": ["Laravel", "Livewire", "AlpineJS", "responsive", "Custom Design", "User Login", "Rating System"],
-    "order": 5
+    "tags": ["Laravel", "Livewire", "AlpineJS", "responsive", "Custom Design", "User Login", "Rating System"]
   }

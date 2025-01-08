@@ -1,7 +1,7 @@
 ---
-const anchor = Astro.props;
+const { anchor } = Astro.props;
 ---
-<a class="scroll-down" href={`#${anchor.anchor}`}>
+<a class="scroll-down" href={`#${anchor}`}>
     <span class="scroll-down__icon" data-feather="arrow-left"></span>
     <span>Scroll down</span>
 </a>
