@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import TeaserProject from "../TeaserProject.astro";
 
-const sectionTitle = "Referenzen";
+const { sectionTitle } = Astro.props;
 const sectionIntroParagraph = "Entdecken Sie einige meiner Projekte. Die meisten Projekte sind enstanden, als ich mich im Angestelltenverhältnis bei der JoussenKarliczek GmbH befand.";
 const projects = await getCollection("projects");
 
