@@ -4,7 +4,6 @@ export function glideInit(selector, options = {}) {
     const defaultOptions = {
         type: 'carousel',
         perView: 1,
-        gap: 10,
     };
 
     // Merge default options with user-provided options

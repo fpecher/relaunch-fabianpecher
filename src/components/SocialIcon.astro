@@ -1,9 +1,9 @@
 ---
-const { platform, username } = Astro.props;
+const { platform, platformIcon, username } = Astro.props;
 ---
 
-<a href={`https://www.${platform}.com/${username}`} target="_blank" class="button-icon" rel="nofollow" aria-label={`Zu meinem ${platform} Profil`}>
-    <span class="button-icon__icon" data-feather={platform}></span>
+<a href={`https://www.${platform}/${username}`} target="_blank" class="button-icon" rel="nofollow" aria-label={`Zu meinem ${platform} Profil`}>
+    <span class="button-icon__icon" data-feather={platformIcon}></span>
 </a>
 
 <style lang="scss">
