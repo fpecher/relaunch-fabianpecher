@@ -1,0 +1,16 @@
+---
+const { icon, text } = Astro.props;
+---
+
+<span class="icon-text">
+    <span class="icon-text__icon" data-feather={ icon } ></span>
+    <span class="icon-text__text">{ text }</span>
+</span>
+
+<style lang="scss">
+    .icon-text {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+</style>

@@ -1,0 +1,222 @@
+---
+import IconText from '../components/IconText.astro';
+
+export interface TimelineItem {
+  additionalClass?: string;
+  icon: string;
+  date: string;
+  title: string;
+  description: string;
+  aos: string
+}
+
+interface Props {
+  items: TimelineItem[];
+  additionalClass?: string;
+  headline: string;
+}
+
+const { items, headline, additionalClass } = Astro.props as Props;
+
+const visibleItems = items.slice(0, 3);
+const hiddenItems = items.slice(3);
+---
+
+<div class={`timeline ${additionalClass ?? ''}`} data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="timeline__headline">{headline}</h2>
+    
+    {visibleItems.map((item, i) => (
+        <div
+          class={`timeline__item ${item.additionalClass ?? ''}`}
+          data-aos={item.aos ?? 'fade-up'}
+          data-aos-delay={i * 100}>
+          <div class="timeline__date">
+            <IconText icon={item.icon} text={item.date} />
+          </div>
+          <div class="timeline__content">
+            <p class="timeline__title">{item.title}</p>
+            <p class="timeline__description">{item.description}</p>
+          </div>
+        </div>
+      ))}
+    
+      {hiddenItems.length > 0 && (
+        <div id="hidden-timeline-items" class="timeline__item--hidden">
+            {hiddenItems.map((item, i) => (
+              <div
+                class={`timeline__item ${item.additionalClass ?? ''}`}
+                data-aos={item.aos ?? 'fade-up'}
+                data-aos-delay={i * 100}>
+                <div class="timeline__date">
+                  <IconText icon={item.icon} text={item.date} />
+                </div>
+                <div class="timeline__content">
+                  <p class="timeline__title">{item.title}</p>
+                  <p class="timeline__description">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+    
+          <button
+            id="read-more-btn"
+            class="timeline__readmore-btn"
+            onclick="
+                const hidden = document.getElementById('hidden-timeline-items');
+                if (hidden) {
+                    hidden.classList.remove('timeline__item--hidden');
+                    hidden.classList.add('timeline__item--visible');
+                    if (typeof AOS !== 'undefined') AOS.refresh(); // nur wenn AOS existiert
+                }
+                this.style.display = 'none';
+            "
+          >
+            <span class="icon" data-feather="chevron-down"></span>
+            Weitere Stationen anzeigen
+          </button>
+      )}
+
+</div>
+
+<style lang="scss">
+    @use "../styles/setup/colors.setup" as colors;
+    @use "../styles/mixins/spacing.mixin" as spacings;
+    @use "../styles/mixins/font-size.mixin" as fontsizes;
+    @use '../styles/mixins/breakpoint.mixin' as breakpoints;
+    @use '../styles/setup/fonts.setup.scss' as fonts;
+
+    .timeline {
+        $bem-block: &;
+
+        position: relative;
+
+        &__headline {
+            @include fontsizes.font-size(24);
+            @include spacings.spacing-inner('left', 10);
+            @include spacings.spacing-inner('right', 10);
+            display: block;
+            margin-bottom: 20px;
+
+            color: colors.$primary-gray;
+
+            @include breakpoints.breakpoint('s') {
+                @include fontsizes.font-size(30);
+                @include spacings.spacing-inner('left', 20);
+                @include spacings.spacing-inner('right', 20);
+                margin-bottom: 50px;
+            }
+        }
+        
+        &__item {
+            @include spacings.spacing-inner('top', 30);
+            @include spacings.spacing-inner('left', 15);
+            @include spacings.spacing-inner('right', 15);
+
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            background-color: #e7e7e7;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            outline: 2px solid transparent;
+            transition: .1s ease-in-out;
+
+            @include breakpoints.breakpoint('s') {
+                flex-direction: row;
+            }
+
+            &--hidden {
+                display: none;
+            }
+            
+            &--visible {
+                display: block;
+            }
+
+            &:hover {
+                outline: 2px solid colors.$secondary-gray;
+            }
+        }
+
+        &__date {
+            @include fontsizes.font-size(18);
+            @include spacings.spacing-inner('left', 10);
+            @include spacings.spacing-inner('right', 10);
+            
+            color: colors.$secondary-gray;
+            font-family: fonts.$font-family-headlines;
+            transition: .2s ease-in-out;
+            will-change: transform, color;
+            width: 100%;
+
+            @include breakpoints.breakpoint('s') {
+                @include spacings.spacing-inner('left', 20);
+                @include spacings.spacing-inner('right', 20);
+                width: 33.33%;
+            }
+        }
+
+        &__content {
+            @include spacings.spacing-inner('left', 10);
+            @include spacings.spacing-inner('right', 10);
+            @include spacings.spacing-inner('top', 10);
+            @include spacings.spacing-inner('bottom', 40);
+
+            width: 100%;
+
+            @include breakpoints.breakpoint('s') {
+                @include spacings.spacing-inner('top', 0);
+                @include spacings.spacing-inner('left', 20);
+                @include spacings.spacing-inner('right', 20);
+
+                width: 66.66%;
+            }
+        }
+
+        &__title {
+            @include fontsizes.font-size(18);
+
+            font-weight: bold;
+            line-height: 1.5;
+            margin-bottom: 5px;
+            color: colors.$secondary-gray;
+
+            @include breakpoints.breakpoint('s') {
+                @include fontsizes.font-size(20);
+                margin-bottom: 15px;
+            }
+        }
+
+        &__description {
+            color: colors.$secondary-gray;
+        }
+
+        &__readmore-btn {
+            @include fontsizes.font-size(16);
+
+            margin: auto;
+            display: block;
+            text-align: center;
+            border: 1px solid colors.$secondary-gray;
+            background-color: transparent;
+            color: colors.$secondary-gray;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-family: fonts.$font-family-headlines;
+            transition: .2s ease-in-out;
+            will-change: background-color, color;
+
+            &:hover {
+                background-color: colors.$secondary-gray;
+                color: white;
+            }
+
+            .icon {
+                vertical-align: middle;
+                margin-right: 5px;
+                margin-top: -1px;
+            }
+        }
+    }
+</style>
