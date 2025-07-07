@@ -16,6 +16,13 @@ const { pageTitle, bodyClass } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         
         <title>{pageTitle}</title>
+
+        <style>
+            &::selection {
+                background: #57C785;
+                color: #fff;
+            }
+        </style>
     </head>
     <body class={bodyClass}>  
         <Logo />

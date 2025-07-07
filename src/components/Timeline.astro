@@ -5,6 +5,7 @@ export interface TimelineItem {
   additionalClass?: string;
   icon: string;
   date: string;
+  employer: string;
   title: string;
   description: string;
   aos: string
@@ -35,6 +36,10 @@ const hiddenItems = items.slice(3);
           </div>
           <div class="timeline__content">
             <p class="timeline__title">{item.title}</p>
+            <span class="timeline__employer">
+              <span data-feather="briefcase"></span>
+              {item.employer}
+            </span>
             <p class="timeline__description">{item.description}</p>
           </div>
         </div>
@@ -51,7 +56,13 @@ const hiddenItems = items.slice(3);
                   <IconText icon={item.icon} text={item.date} />
                 </div>
                 <div class="timeline__content">
-                  <p class="timeline__title">{item.title}</p>
+                  <p class="timeline__title">
+                    {item.title}
+                  </p>
+                  <span class="timeline__employer">
+                    <span data-feather="briefcase"></span>
+                    {item.employer}
+                  </span>
                   <p class="timeline__description">{item.description}</p>
                 </div>
               </div>
@@ -179,17 +190,32 @@ const hiddenItems = items.slice(3);
 
             font-weight: bold;
             line-height: 1.5;
-            margin-bottom: 5px;
             color: colors.$secondary-gray;
 
             @include breakpoints.breakpoint('s') {
                 @include fontsizes.font-size(20);
-                margin-bottom: 15px;
+                margin-bottom: 8px;
             }
         }
 
+        &__employer {
+          @include fontsizes.font-size(12);
+          font-family: fonts.$font-family-headlines;
+          font-weight: 300;
+          color: colors.$secondary-gray;
+          display: inline-block;
+          
+          .feather {
+            width: 13px;
+            height: 13px;
+            vertical-align: text-bottom;
+            margin-right: 2px;
+          }
+        }
+
         &__description {
-            color: colors.$secondary-gray;
+          margin-top: 20  px;
+          color: colors.$secondary-gray;
         }
 
         &__readmore-btn {

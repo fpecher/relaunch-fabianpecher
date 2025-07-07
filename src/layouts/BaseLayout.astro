@@ -18,6 +18,13 @@ const { pageTitle, bodyClass } = Astro.props;
         <meta name="google-site-verification" content="JskPz3OSE5wXuD_WzlPaxGZmA-mV-5A4btszmB2_ask" />
         <meta name="generator" content={Astro.generator} />
 
+        <style>
+            &::selection {
+                background: #57C785;
+                color: #fff;
+            }
+        </style>
+
         <!-- Matomo -->
         <script lang="js">
             var _paq = window._paq = window._paq || [];
