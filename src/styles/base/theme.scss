@@ -3,4 +3,26 @@
 html.dark {
     background-color: colors.$primary-gray;
     color: colors.$white;
+
+    .headline {
+        color: colors.$white;
+    }
+
+    p {
+        color: colors.$white;
+    }
+
+    .box-services {
+        &::after {
+            background-color: colors.$secondary-gray;
+        }
+
+        &__title {
+            color: colors.$white;
+        }
+        
+        &__listItem {
+            color: colors.$white;
+        }
+    }
 }
