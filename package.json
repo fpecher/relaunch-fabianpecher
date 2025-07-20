@@ -10,9 +10,8 @@
   },
   "dependencies": {
     "@glidejs/glide": "^3.7.1",
-    "@jop-software/astro-matomo": "^1.1.1",
     "aos": "^2.3.4",
-    "astro": "^5.10.1",
+    "astro": "^5.11.1",
     "feather-icons": "^4.29.2",
     "isomorphic-dompurify": "^2.19.0",
     "jquery": "^3.7.1",
