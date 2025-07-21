@@ -19,8 +19,8 @@ interface Props {
 
 const { items, headline, additionalClass } = Astro.props as Props;
 
-const visibleItems = items.slice(0, 3);
-const hiddenItems = items.slice(3);
+const visibleItems = items.slice(0, 4);
+const hiddenItems = items.slice(4);
 ---
 
 <div class={`timeline ${additionalClass ?? ''}`} data-aos="fade-up" data-aos-duration="1000">
@@ -95,7 +95,8 @@ const hiddenItems = items.slice(3);
     @use "../styles/mixins/font-size.mixin" as fontsizes;
     @use '../styles/mixins/breakpoint.mixin' as breakpoints;
     @use '../styles/setup/fonts.setup.scss' as fonts;
-
+    @use "sass:color";
+ 
     .timeline {
         $bem-block: &;
 
@@ -130,11 +131,19 @@ const hiddenItems = items.slice(3);
             border-radius: 20px;
             margin-bottom: 20px;
             position: relative;
-            outline: 2px solid transparent;
+            outline: 2px solid colors.$white;
             z-index: 1;
+
+            background: rgba(colors.$white, 0.08);
+            backdrop-filter: blur(10px);
+            z-index: 0;
 
             @include breakpoints.breakpoint('s') {
                 flex-direction: row;
+            }
+
+            &:hover {
+                outline: 2px solid colors.$secondary-gray;
             }
 
             &--hidden {
@@ -145,8 +154,41 @@ const hiddenItems = items.slice(3);
                 display: block;
             }
 
-            &:hover {
-                outline: 2px solid colors.$secondary-gray;
+            &--current {
+                background: transparent;
+
+                &::before {
+                  content: '';
+                  position: absolute;
+                  inset: 0;
+                  outline: 2px solid colors.$white;
+                  border-radius: 20px;
+                  background: rgba(colors.$white, 0.08);
+                  backdrop-filter: blur(10px);
+                  z-index: 0;
+                  box-shadow: 3px 3px 10px rgba(colors.$black, 0.1);
+                }
+
+                // &::after {
+                //     content: '';
+                //     position: absolute;
+                //     top: 30px;
+                //     left: -80px;
+                //     width: 150px;
+                //     height: 150px;
+                //     background-color: colors.$green;
+                //     border-radius: 50%;
+                //     z-index: -1;
+                // }
+
+                #{$bem-block}__date,
+                #{$bem-block}__title,
+                #{$bem-block}__employer,
+                #{$bem-block}__description {
+                    color: colors.$primary-gray;
+                    position: relative;
+                    z-index: 2;
+                }
             }
         }
 

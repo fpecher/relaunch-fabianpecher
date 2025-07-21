@@ -15,7 +15,11 @@ import LogoFpecher from '../assets/images/logo.svg';
 .logo {
     @include spacings.spacing-inner('all', 20);
 
-    background: colors.$white;
+    background: rgba(colors.$white, 0.08);
+    backdrop-filter: blur(10px);
+    border-right: 1px #f1f1f1 solid;
+    border-left: 1px #f1f1f1 solid;
+    border-bottom: 1px #f1f1f1 solid;
     width: 60px;
     height: 60px;
     position: fixed;
@@ -37,6 +41,7 @@ import LogoFpecher from '../assets/images/logo.svg';
         width: 62px;
         height: 62px;
         transform: translateY(-100%) translateX(-50%);
+        background: colors.$white;
     }
 
     &__image {
