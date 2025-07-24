@@ -2,7 +2,7 @@ export const workExperienceItems = [
   {
     additionalClass: "timeline__item--current",
     icon: "arrow-right",
-    date: "Januar 2025 – heute",
+    date: "Februar 2025 – heute",
     employer: "vielleicht bald Sie?",
     title: "Aktuell auf der Suche nach neuen Herausforderungen",
     description: "Aktuell bin ich auf der Suche nach neuen Herausforderungen im Bereich Webentwicklung, WordPress- oder Frontend-Entwicklung. Ich freue mich auf spannende Projekte und die Möglichkeit, meine Fähigkeiten in einem neuen Team einzubringen.",
